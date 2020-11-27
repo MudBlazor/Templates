@@ -6,7 +6,7 @@
 [![Nuget](https://img.shields.io/nuget/v/MudBlazor?style=flat-square)](https://www.nuget.org/packages/MudBlazor/)
 
 
-In this repo you will find project templates for Blazor built with just MudBlazor. The idea is to provide templates that range from basic layout to more advanced application setups. It's a excellent place to start.
+In this repo you will find project templates for Blazor built with just MudBlazor. The idea is to provide templates that range from a basic layout to more advanced application setups. It's an excellent place to start.
 
 
 ## Prerequisites
