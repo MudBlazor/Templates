@@ -6,3 +6,14 @@
 [![Nuget](https://img.shields.io/nuget/v/MudBlazor?style=flat-square)](https://www.nuget.org/packages/MudBlazor/)
 
 
+In this repo you will find project templates for Blazor built with just MudBlazor. The idea is to provide templates that range from basic layout to more advanced application setups. It's a excellent place to start.
+
+## Prerequisites
+
+- .NET Core 3.1
+- Visual Studio 2019 with the ASP.NET and Web development.
+
+
+## Documentation & Demo
+- [MudBlazor.com](https://mudblazor.com)
+- [Try.MudBlazor.com](https://try.mudblazor.com/)
