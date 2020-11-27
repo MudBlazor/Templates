@@ -8,12 +8,13 @@
 
 In this repo you will find project templates for Blazor built with just MudBlazor. The idea is to provide templates that range from basic layout to more advanced application setups. It's a excellent place to start.
 
+
 ## Prerequisites
 
 - .NET Core 3.1
 - Visual Studio 2019 with the ASP.NET and Web development.
 
-
-## Documentation & Demo
+## MudBlazor
+For more information about MudBlazor check by the main repo or visit our website.
+- [Github Repo](https://github.com/Garderoben/MudBlazor)
 - [MudBlazor.com](https://mudblazor.com)
-- [Try.MudBlazor.com](https://try.mudblazor.com/)
