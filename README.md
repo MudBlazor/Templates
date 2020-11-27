@@ -15,6 +15,6 @@ In this repo you will find project templates for Blazor built with just MudBlazo
 - Visual Studio 2019 with the ASP.NET and Web development.
 
 ## MudBlazor
-For more information about MudBlazor check by the main repo or visit our website.
-- [Github Repo](https://github.com/Garderoben/MudBlazor)
-- [MudBlazor.com](https://mudblazor.com)
+For more information about MudBlazor check by the main repository or visit our website.
+- [Github repository](https://github.com/Garderoben/MudBlazor)
+- [Mudblazor website](https://mudblazor.com)
