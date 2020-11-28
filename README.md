@@ -27,3 +27,7 @@ For more information about Mudblazor, stop by our main repo or visit our website
 ![Blazor Template 2](content/BlazorTemplate2.png)
 
 ![Blazor Template 3](content/BlazorTemplate3.png)
+
+## License
+
+These Templates are free to use!
