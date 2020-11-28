@@ -1,6 +1,6 @@
 @page "/fetchdata"
-@inject HttpClient Http
 
+@inject HttpClient Http
 
 <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-16">
     <MudText Typo="Typo.h3" GutterBottom="true">Weather forecast</MudText>
@@ -30,9 +30,6 @@
         </MudTable>
     }
 </MudContainer>
-
-
-
 
 @code {
     private WeatherForecast[] forecasts;
