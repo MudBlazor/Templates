@@ -22,11 +22,11 @@ For more information about Mudblazor, stop by our main repo or visit our website
 
 ## Screenshots
 
-![Blazor Template 1](content/BlazorTemplate1.png)
+![Blazor Template 1](content/BlazorTemplate1_drop.png)
 
-![Blazor Template 2](content/BlazorTemplate2.png)
+![Blazor Template 2](content/BlazorTemplate2_drop.png)
 
-![Blazor Template 3](content/BlazorTemplate3.png)
+![Blazor Template 3](content/BlazorTemplate3_drop.png)
 
 ## License
 
