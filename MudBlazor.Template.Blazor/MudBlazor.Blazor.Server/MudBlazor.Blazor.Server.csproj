@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MudBlazor" Version="1.2.4" />
+    <PackageReference Include="MudBlazor" Version="2.0.0" />
   </ItemGroup>
 
 </Project>

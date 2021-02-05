@@ -23,9 +23,7 @@ namespace MudBlazor.Blazor.Server
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddMudBlazorDialog();
-            services.AddMudBlazorSnackbar();
-            services.AddMudBlazorResizeListener();
+            services.AddMudServices();
             services.AddSingleton<WeatherForecastService>();
         }
 
