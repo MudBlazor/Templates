@@ -20,13 +20,9 @@ For more information about Mudblazor, stop by our main repo or visit our website
 - [Github repository](https://github.com/Garderoben/MudBlazor)
 - [MudBlazor website](https://mudblazor.com)
 
-## Screenshots
+## Default Blazor Template
 
-![Blazor Template 1](content/BlazorTemplate1_drop.png)
-
-![Blazor Template 2](content/BlazorTemplate2_drop.png)
-
-![Blazor Template 3](content/BlazorTemplate3_drop.png)
+![Template_DefaultBlazor](content/Template_DefaultBlazor.png)
 
 ## License
 
