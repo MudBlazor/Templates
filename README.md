@@ -12,7 +12,7 @@ In this repo you will find project templates for Blazor built with just MudBlazo
 
 ## Prerequisites
 
-- .NET Core 3.1
+- .NET 5
 - Visual Studio 2019 with the ASP.NET and Web development.
 
 ## MudBlazor
@@ -21,8 +21,10 @@ For more information about Mudblazor, stop by our main repo or visit our website
 - [MudBlazor website](https://mudblazor.com)
 
 ## Default Blazor Template
-
 ![DefaultBlazorTemplate](content/DefaultBlazorTemplate.png)
+
+## Admin Dashboard Template
+![AdminDashboardTemplate](content/AdminDashboardTemplate.png)
 
 ## License
 
