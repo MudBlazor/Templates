@@ -1,0 +1,61 @@
+﻿@page "/application/email/{folder?}"
+@inject NavigationManager navigationManager
+
+<MudHidden Breakpoint="Breakpoint.SmAndDown">
+    <MudText Typo="Typo.h5" Color="Color.Primary" Class="mb-4">Email Application</MudText>
+</MudHidden>
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
+    <MudPaper Elevation="25" Class="d-flex align-center py-1 mb-4">
+        <MudIconButton OnClick="@(() => OpenDrawer())" Icon="@Icons.Material.Outlined.Menu" Color="Color.Inherit" Class="ml-3 mr-2" />
+        <MudText Typo="Typo.h6" Color="Color.Primary">Email Application</MudText>
+    </MudPaper>
+</MudHidden>
+<div class="d-flex flex-grow-1 flex-row">
+    <MudHidden Breakpoint="Breakpoint.SmAndDown">
+        <MudPaper Elevation="25" Class="px-3 py-6 mr-6" MinWidth="250px">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" Class="my-2" FullWidth="true">Compose</MudButton>
+            <EmailNavList folder="@folder" />
+        </MudPaper>
+    </MudHidden>
+    <MudPaper Elevation="25" Class="py-4 flex-grow-1">
+        <MudToolBar Dense="true" DisableGutters="true">
+            <MudCheckBox T="bool" Label="Select All" Class="ml-2" />
+            <MudAppBarSpacer />
+            <MudIconButton Icon="@Icons.Material.Outlined.NavigateBefore" Class="mx-2" />
+            <MudIconButton Icon="@Icons.Material.Outlined.NavigateNext" Class="mr-4" />
+        </MudToolBar>
+        @if (folder == "inbox")
+        {
+            <Inbox />
+        }
+        else
+        {
+            <MudText Align="Align.Center" Class="mt-16">No Emails :(</MudText>
+        }
+    </MudPaper>
+</div>
+<MudDrawer @bind-Open="@open" Anchor="@Anchor.Left" Elevation="1" Variant="@DrawerVariant.Temporary">
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" Class="mx-4 mt-6 mb-4">Compose</MudButton>
+    <EmailNavList folder="@folder" />
+</MudDrawer>
+
+
+@code
+{
+    bool open;
+
+    [Parameter] public string folder { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (String.IsNullOrEmpty(folder))
+        {
+            folder = "inbox";
+        }
+    }
+
+    void OpenDrawer()
+    {
+        open = true;
+    }
+}

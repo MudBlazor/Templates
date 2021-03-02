@@ -1,0 +1,31 @@
+﻿<MudList Clickable="true">
+    <MudListItem Href="/application/email/inbox" Text="Inbox" Icon="@Icons.Material.Outlined.Inbox" Dense="true" Class="@GetClass("inbox")" />
+    <MudListItem Href="/application/email/sent" Text="Sent" Icon="@Icons.Material.Outlined.Send" Dense="true" Class="@GetClass("sent")" />
+    <MudListItem Href="/application/email/drafts" Text="Drafts" Icon="@Icons.Material.Outlined.Drafts" Dense="true" Class="@GetClass("drafts")" />
+    <MudListItem Href="/application/email/starred" Text="Starred" Icon="@Icons.Material.Outlined.StarRate" Dense="true" Class="@GetClass("starred")" />
+    <MudListItem Href="/application/email/trash" Text="Trash" Icon="@Icons.Material.Outlined.Delete" Dense="true" Class="@GetClass("trash")" />
+    <MudListSubheader Class="mt-6 mb-n4">
+        Labels
+    </MudListSubheader>
+    <MudListItem Text="Work" Icon="@Icons.Material.Outlined.Label" IconColor="Color.Info" Dense="true" Class="my-2 rounded" />
+    <MudListItem Text="Invoices" Icon="@Icons.Material.Outlined.Label" IconColor="Color.Success" Dense="true" Class="my-2 rounded" />
+    <MudListItem Text="Social" Icon="@Icons.Material.Outlined.Label" IconColor="Color.Warning" Dense="true" Class="my-2 rounded" />
+    <MudListItem Text="Orders" Icon="@Icons.Material.Outlined.Label" IconColor="Color.Error" Dense="true" Class="my-2 rounded" />
+</MudList>
+
+@code {
+
+    [Parameter] public string folder { get; set; }
+
+    public string GetClass(string _folder)
+    {
+        if (folder == _folder)
+        {
+            return "my-2 rounded mud-primary-text";
+        }
+        else
+        {
+            return "my-2 rounded";
+        }
+    }
+}

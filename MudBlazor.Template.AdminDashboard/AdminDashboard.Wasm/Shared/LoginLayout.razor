@@ -1,0 +1,19 @@
+﻿@inherits LayoutComponentBase
+
+
+<MudThemeProvider Theme="_currentTheme" />
+<MudSnackbarProvider />
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex align-center" Style="height: 100vh;">
+    <MudPaper Elevation="25" Class="pa-8" Width="100%" MaxWidth="500px">
+        <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Size="Size.Large" Style="width:100px; height:100px;" />
+        @Body
+    </MudPaper>
+</MudContainer>
+<MudContainer MaxWidth="MaxWidth.Small">
+    <MudAlert Severity="Severity.Info" Class="mt-8">No authentication is required, you can just click sign in.</MudAlert>
+</MudContainer>
+
+@code {
+    private MudTheme _currentTheme = new MudBlazorAdminDashboard();
+}

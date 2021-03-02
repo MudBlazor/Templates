@@ -1,0 +1,23 @@
+﻿@using AdminDashboard.Server.Models
+
+<MudList Clickable="true">
+    <MudListSubheader Class="ml-n2 mb-n4"><b>CORE TEAM - 2</b></MudListSubheader>
+    @foreach (var user in chatUsers.Where(x => x.UserRoleColor == Colors.DeepPurple.Accent4))
+    {
+        <User UserName="@user.UserName" UserRoleColor="@user.UserRoleColor" OnlineStatus="@user.OnlineStatus" ListeningToSpotify="@user.Spotify" AvatarUrl="@user.AvatarUrl" />
+    }
+    <MudListSubheader Class="ml-n2 mt-4 mb-n4"><b>CONTRIBUTION TEAM - 5</b></MudListSubheader>
+    @foreach (var user in chatUsers.Where(x => x.UserRoleColor == Colors.Red.Accent3))
+    {
+        <User UserName="@user.UserName" UserRoleColor="@user.UserRoleColor" OnlineStatus="@user.OnlineStatus" ListeningToSpotify="@user.Spotify" AvatarUrl="@user.AvatarUrl" AvatarColor="@user.AvatarColor" />
+    }
+    <MudListSubheader Class="ml-n2 mt-4 mb-n4"><b>ONLINE - 5</b></MudListSubheader>
+    @foreach (var user in chatUsers.Where(x => x.UserRoleColor == Colors.BlueGrey.Lighten1))
+    {
+        <User UserName="@user.UserName" UserRoleColor="@user.UserRoleColor" OnlineStatus="@user.OnlineStatus" ListeningToSpotify="@user.Spotify" AvatarUrl="@user.AvatarUrl" AvatarColor="@user.AvatarColor" />
+    }
+</MudList>
+
+@code {
+    [Parameter] public ChatUser[] chatUsers { get; set; }
+}
