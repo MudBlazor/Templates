@@ -22,7 +22,7 @@ For more information about Mudblazor, stop by our main repo or visit our website
 
 ## Default Blazor Template
 
-![Template_DefaultBlazor](content/Template_DefaultBlazor.png)
+![DefaultBlazorTemplate](content/DefaultBlazorTemplate.png)
 
 ## License
 
