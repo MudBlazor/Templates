@@ -8,6 +8,8 @@
 
 In this repo you will find project templates for Blazor built with just MudBlazor. The idea is to provide templates that range from a basic layout to more advanced application setups. It's an excellent place to get started with MudBlazor.
 
+[Live demo](https://templates.mudblazor.com/)
+
 **Note: Make sure to upgrade the MudBlazor nuget references to the newest version!** If you can, please PR the nuget upgrade, so this repo is kept up to date with MudBlazor.
 
 ## Prerequisites
