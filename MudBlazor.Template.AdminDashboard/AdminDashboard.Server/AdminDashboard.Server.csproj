@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MudBlazor" Version="5.0.3" />
-    <PackageReference Include="MudBlazor.ThemeManager" Version="1.0.1" />
+    <PackageReference Include="MudBlazor" Version="5.0.5" />
+    <PackageReference Include="MudBlazor.ThemeManager" Version="1.0.2" />
   </ItemGroup>
 
 </Project>
