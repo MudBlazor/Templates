@@ -363,3 +363,5 @@ FodyWeavers.xsd
 /MudBlazor/.config
 /MudBlazor/Properties/PublishProfiles
 /MudBlazor/Properties/ServiceDependencies
+
+.DS_Store
