@@ -9,5 +9,6 @@
         "language": "C#",
         "type": "project"
     },
-    "sourceName": "MudBlazor"
+    "sourceName": "DefaultBlazor.Server",
+    "preferNameDirectory": true,
 }

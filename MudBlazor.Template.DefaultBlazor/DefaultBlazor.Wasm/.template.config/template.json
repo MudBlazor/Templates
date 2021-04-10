@@ -9,5 +9,8 @@
         "language": "C#",
         "type": "project"
     },
-    "sourceName": "MudBlazorWasm"
+    "sourceName": "DefaultBlazor.Wasm",
+    "preferNameDirectory": true,
+    
+        
 }
