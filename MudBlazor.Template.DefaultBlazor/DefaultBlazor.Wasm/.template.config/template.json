@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Garderoben",
+    "classifications": [ "Web", "Blazor", "WebAssembly" ],
+    "identity": "MudBlazor.Template.DefaultBlazor.Wasm",
+    "name": "MudBlazor WebAssembly Template: default project",
+    "shortName": "mudblazorwasm",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "MudBlazorWasm"
+}
