@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Client\MudBlazor.Template.DefaultBlazorPWA.Client.csproj" />
-    <ProjectReference Include="..\Shared\MudBlazor.Template.DefaultBlazorPWA.Shared.csproj" />
+    <ProjectReference Include="..\DefaultBlazorPWA.Client\DefaultBlazorPWA.Client.csproj" />
+    <ProjectReference Include="..\DefaultBlazorPWA.Shared\DefaultBlazorPWA.Shared.csproj" />
   </ItemGroup>
 
 

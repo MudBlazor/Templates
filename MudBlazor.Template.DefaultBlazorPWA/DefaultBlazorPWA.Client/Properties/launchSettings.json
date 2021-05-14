@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "MudBlazor.Template.DefaultBlazorPWA": {
+    "DefaultBlazorPWA": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

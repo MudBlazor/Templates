@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace MudBlazor.Template.DefaultBlazorPWA.Shared
+namespace DefaultBlazorPWA.Shared
 {
     public class WeatherForecast
     {

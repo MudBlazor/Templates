@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using MudBlazor.Template.DefaultBlazorPWA.Shared;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using DefaultBlazorPWA.Shared;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
-namespace MudBlazor.Template.DefaultBlazorPWA.Server.Controllers
+namespace DefaultBlazorPWA.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
