@@ -12,9 +12,9 @@
     {
         <MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
             <HeaderContent>
-                <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.Date)">Date</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x=>x.Date)">Date</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.TemperatureC)">Temp. (C)</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x=>x.TemperatureF)">Temp. (F)</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.TemperatureF)">Temp. (F)</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.Summary)">Summary</MudTableSortLabel></MudTh>
             </HeaderContent>
             <RowTemplate>
