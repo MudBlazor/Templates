@@ -6,7 +6,7 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="4">
+    <MudAppBar Elevation="_themeManager.AppBarElevation">
         <MudHidden Breakpoint="Breakpoint.SmAndDown">
             <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Size="Size.Large" />
         </MudHidden>
@@ -41,7 +41,7 @@
             </ChildContent>
         </MudMenu>
     </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" Elevation="25" ClipMode="_themeManager.DrawerClipMode">
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="_themeManager.DrawerElevation" ClipMode="_themeManager.DrawerClipMode">
         <NavMenu />
     </MudDrawer>
     <MudMainContent>
@@ -92,6 +92,9 @@
         _themeManager.DrawerClipMode = DrawerClipMode.Always;
         _themeManager.FontFamily = "Montserrat";
         _themeManager.DefaultBorderRadius = 3;
+        _themeManager.AppBarElevation = 4;
+        _themeManager.DrawerElevation = 25;
+        StateHasChanged();
     }
 
     private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
