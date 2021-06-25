@@ -104,24 +104,3 @@ dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true --no-self-contain
 
   * ASP.NET Core Blazor event handling
     https://docs.microsoft.com/en-us/aspnet/core/blazor/components/event-handling?view=aspnetcore-5.0
-
-
-## TODO
-
-### .Net MAUI
-
-MAUI Should allow for applications that can be published to IOS / Android / MacosX / Linux etc
-Since MAUI should have support for BlazorWebView
-
-  * https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-5/
-  * https://www.c-sharpcorner.com/article/getting-started-with-maui-xamarin-forms-application-using-visual-studio-2019-pre/
-  * https://luismts.com/msbuild-dotnetmaui-preview-4/
-
-### Frameless Window
-
-For a frameless window (where you implement the top bar yourself instead of using the default winform / wpf title bar)
-Currently it's possible to add a close / maximise / restore button to the top right hand side using a custom AppBar
-However implementing a drag area seems to be a problem, in that BlazorWebView overrides anything undereath including with WPF
-
-  * https://github.com/dotnet/maui/issues/1304
-  * https://docs.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution#fixed-version-distribution-mode
