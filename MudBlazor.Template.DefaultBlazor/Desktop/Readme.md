@@ -57,6 +57,23 @@ using the "UI Watch" launch profile, this uses dotnet watch to launch the site.
 You won't be able to debug the CSharp code, but this method is useful for editing the razor content / design on the fly.
 
 
+## Loading in pages from multiple libraries
+
+Normally a blazor app only looks within it's own assembly for pages.
+Since we use pages from a seperate library such as DefaultBlazor.Desktop.Shared
+We need to indicate which libraries to look for when looking for razor content.
+
+Typically this can be speciied within the AdditionalAssemblies properties of the router.
+
+**App/AppRoot.razor**
+```
+<Router AppAssembly="@typeof(Program).Assembly"
+        AdditionalAssemblies="new[] { typeof(MainLayout).Assembly }"
+        PreferExactMatches="@true">
+
+```
+
+
 ## Publish
 
 To reduce the file count when publishing
