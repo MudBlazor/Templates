@@ -1,0 +1,78 @@
+# Readme
+
+Included are some examples for the use of BlazorWebView
+This allows Mudblazor to be used in the context of a desktop application.
+BlazorWebView is a method of embedding a specialised web control inside a winforms / wpf / maui application
+
+The main content of the app is located within 
+
+  * **DefaultBlazor.Desktop.Shared**
+
+This contains all the pages / services etc that the other projects use.
+The rest are basically wrappers that use this content
+
+  * **DefaultBlazor.Desktop.WinForms**
+    An example of launching via a windows forms applcation
+
+  * **DefaultBlazor.Desktop.Wpf**
+    An example of launching via a wpf application
+
+  * **DefaultBlazor.Desktop.Web**
+    An example of launching as a website - this is useful for razor page hot reloading.
+
+
+## Requirements
+
+Currently this is experimental in that you will need
+
+  * Visual Studio 2019 Community Preview 16.11.0 or later
+    (this can be installed at the same time as stable Studio 2019)
+    https://visualstudio.microsoft.com/vs/preview/
+  * .Net 6 Preview 5 or later
+    https://dotnet.microsoft.com/download/dotnet/6.0
+  * The webview2 control
+    https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section
+
+This seems to work with WinForms and WPF
+It may also be possible later on via the .Net Multi-Platform App UI (MAUI) which is also still under development but would allow for cross platform desktop applications.
+
+
+## Browser dev tools
+
+It's possible to open up the embedded browser dev tools within winforms by using Ctrl-Shift-i
+
+  * https://github.com/dotnet/aspnetcore/issues/30524
+
+
+## Hot Reloading
+
+.Net 6 preview 5 includes a feature for hot reloading CSharp code on the fly.
+Although this does not yet include the razor page content (That's upcoming as of writing)
+
+  * https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-4/
+  * https://devblogs.microsoft.com/dotnet/introducing-net-hot-reload/
+
+One way to get hot reloading of the razor content is to launch the app via DefaultBlazor.Desktop.Web
+using the "UI Watch" launch profile, this uses dotnet watch to launch the site.
+You won't be able to debug the CSharp code, but this method is useful for editing the razor content / design on the fly.
+
+
+## Publish
+
+To reduce the file count when publishing
+```
+# Includes the framework
+dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true
+
+# Leaves the framework out
+dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true --no-self-contained
+```
+
+
+## Links
+
+  * Blog post on how to setup a winforms / wpf project
+  * https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-3/#blazorwebview-controls-for-wpf-windows-forms
+
+  * This is a test application used within the official dotnet / aspnetcore repo
+    https://github.com/dotnet/aspnetcore/tree/main/src/Components/WebView/Platforms/WindowsForms
