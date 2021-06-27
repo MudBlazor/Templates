@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DefaultBlazor.Desktop.Shared.Shared {
+﻿namespace DefaultBlazor.Desktop.Common.Shared {
 
     /// <summary> The main layout. </summary>
     public partial class MainLayout {

@@ -17,16 +17,7 @@ maui-check
 ```
 
 
-## Linux Desktop Apps
-
-An alternative option for Linux may be:
-
-  * https://github.com/dotnet/maui/discussions/339
-  * https://github.com/tryphotino/photino.Blazor
-  * https://github.com/chromelyapps/Chromely
-
-
-## Frameless Window
+## WewbViw2 Frameless Window
 
 For a frameless window (where you implement the top bar yourself instead of using the default winform / wpf title bar)
 Currently it's possible to add a close / maximise / restore button to the top right hand side using a custom AppBar
@@ -34,6 +25,8 @@ However implementing a drag area seems to be a problem, in that BlazorWebView ov
 
   * https://github.com/dotnet/maui/issues/1304
   * https://docs.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution#fixed-version-distribution-mode
+
+Note if you want a frameless window then you may have better luck trying Chromely
 
 
 ## WebView2 Standalone

@@ -1,9 +1,9 @@
-﻿using DefaultBlazor.Desktop.Shared.Data;
+﻿using DefaultBlazor.Desktop.Common.Data;
 using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
 using System.Net.Http;
 
-namespace DefaultBlazor.Desktop.Shared.App {
+namespace DefaultBlazor.Desktop.Common.App {
     public class Setup {
 
         /// <summary> Configure serices. </summary>

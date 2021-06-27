@@ -1,12 +1,12 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DefaultBlazor.Desktop.Web {
+namespace DefaultBlazor.Desktop.Chromely {
 
-    /// <summary> Aspnet core startup. </summary>
+    /// <summary> Chromely core startup. </summary>
     public class Startup {
 
         /// <summary> Constructor. </summary>
@@ -41,8 +41,11 @@ namespace DefaultBlazor.Desktop.Web {
             }
             else {
                 app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
             }
 
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
 

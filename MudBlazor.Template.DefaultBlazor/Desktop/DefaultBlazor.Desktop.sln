@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31320.298
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultBlazor.Desktop.Shared", "DefaultBlazor.Desktop.Shared\DefaultBlazor.Desktop.Shared.csproj", "{018BA68D-4396-4CFD-8CF0-DC3476640332}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultBlazor.Desktop.WinForms", "DefaultBlazor.Desktop.WinForms\DefaultBlazor.Desktop.WinForms.csproj", "{938FA994-72FB-4401-A7FC-E58A43210184}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultBlazor.Desktop.Wpf", "DefaultBlazor.Desktop.Wpf\DefaultBlazor.Desktop.Wpf.csproj", "{DA7641E7-7653-422B-8FE2-C7CB18DD5436}"
@@ -13,7 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{673CCA56-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{760F7582-7AFB-4FBE-8E80-B2185B77207B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultBlazor.Desktop.Web", "DefaultBlazor.Desktop.Web\DefaultBlazor.Desktop.Web.csproj", "{853163C9-BECB-49E3-A40D-A2489598B0CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultBlazor.Desktop.Web", "DefaultBlazor.Desktop.Web\DefaultBlazor.Desktop.Web.csproj", "{853163C9-BECB-49E3-A40D-A2489598B0CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultBlazor.Desktop.Chromely", "DefaultBlazor.Desktop.Chromely\DefaultBlazor.Desktop.Chromely.csproj", "{C23CAE91-78A9-43FF-B4ED-68A5259F995D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultBlazor.Desktop.Common", "DefaultBlazor.Desktop.Common\DefaultBlazor.Desktop.Common.csproj", "{B649324E-A35B-4031-8913-C3EE01C63E28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{018BA68D-4396-4CFD-8CF0-DC3476640332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{018BA68D-4396-4CFD-8CF0-DC3476640332}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{018BA68D-4396-4CFD-8CF0-DC3476640332}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{018BA68D-4396-4CFD-8CF0-DC3476640332}.Release|Any CPU.Build.0 = Release|Any CPU
 		{938FA994-72FB-4401-A7FC-E58A43210184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{938FA994-72FB-4401-A7FC-E58A43210184}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938FA994-72FB-4401-A7FC-E58A43210184}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,15 +35,24 @@ Global
 		{853163C9-BECB-49E3-A40D-A2489598B0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{853163C9-BECB-49E3-A40D-A2489598B0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{853163C9-BECB-49E3-A40D-A2489598B0CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23CAE91-78A9-43FF-B4ED-68A5259F995D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23CAE91-78A9-43FF-B4ED-68A5259F995D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23CAE91-78A9-43FF-B4ED-68A5259F995D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C23CAE91-78A9-43FF-B4ED-68A5259F995D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B649324E-A35B-4031-8913-C3EE01C63E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B649324E-A35B-4031-8913-C3EE01C63E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B649324E-A35B-4031-8913-C3EE01C63E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B649324E-A35B-4031-8913-C3EE01C63E28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{018BA68D-4396-4CFD-8CF0-DC3476640332} = {760F7582-7AFB-4FBE-8E80-B2185B77207B}
 		{938FA994-72FB-4401-A7FC-E58A43210184} = {673CCA56-43E6-41C9-86DC-6DA8EDC9B76E}
 		{DA7641E7-7653-422B-8FE2-C7CB18DD5436} = {673CCA56-43E6-41C9-86DC-6DA8EDC9B76E}
 		{853163C9-BECB-49E3-A40D-A2489598B0CA} = {673CCA56-43E6-41C9-86DC-6DA8EDC9B76E}
+		{C23CAE91-78A9-43FF-B4ED-68A5259F995D} = {673CCA56-43E6-41C9-86DC-6DA8EDC9B76E}
+		{B649324E-A35B-4031-8913-C3EE01C63E28} = {760F7582-7AFB-4FBE-8E80-B2185B77207B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1BBDA00-DD60-4333-92F1-FB5CA8996801}

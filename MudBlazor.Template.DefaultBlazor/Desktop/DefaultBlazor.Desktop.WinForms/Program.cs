@@ -39,7 +39,7 @@ namespace DefaultBlazor.Desktop.WinForms {
         public static void SetupServices() {
             Services = new ServiceCollection();
             Services.AddBlazorWebView();
-            Shared.App.Setup.ConfigureSerices(Services);
+            Common.App.Setup.ConfigureSerices(Services);
             ServicesProvider = Services.BuildServiceProvider();
         }
     }

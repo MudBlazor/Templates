@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DefaultBlazor.Desktop.Shared\DefaultBlazor.Desktop.Shared.csproj" />
+    <ProjectReference Include="..\DefaultBlazor.Desktop.Common\DefaultBlazor.Desktop.Common.csproj" />
   </ItemGroup>
 
 </Project>

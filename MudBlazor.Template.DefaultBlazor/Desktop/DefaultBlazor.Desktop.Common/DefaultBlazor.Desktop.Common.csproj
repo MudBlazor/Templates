@@ -14,4 +14,13 @@
     <PackageReference Include="MudBlazor" Version="5.0.14" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\index_server.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "Website": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_CHROMELY": "false",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Chromely": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

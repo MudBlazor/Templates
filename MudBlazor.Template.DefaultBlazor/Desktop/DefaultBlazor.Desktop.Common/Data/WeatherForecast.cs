@@ -1,6 +1,6 @@
 using System;
 
-namespace DefaultBlazor.Desktop.Shared.Data
+namespace DefaultBlazor.Desktop.Common.Data
 {
     public class WeatherForecast
     {
