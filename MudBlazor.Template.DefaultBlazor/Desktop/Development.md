@@ -65,6 +65,15 @@ dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed
 dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true --no-self-contained
 ```
 
+If you want to try this for the Raspberry Pi, Visual studio doesn't have the option listed for linux-arm64
+but it can be run from the command line
+```
+# Arm 64bit
+dotnet publish -c Release -r linux-arm64
+# Arm 32bit
+dotnet publish -c Release -r linux-arm
+```
+
 
 ## Links
 

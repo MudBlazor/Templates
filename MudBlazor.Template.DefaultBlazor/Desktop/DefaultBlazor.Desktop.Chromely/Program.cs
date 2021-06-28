@@ -31,7 +31,7 @@ namespace DefaultBlazor.Desktop.Chromely {
         /// <summary> Run the application as a desktop application. </summary>
         /// <param name="args"> The arguments. </param>
         private static void RunDesktop(string[] args) {
-            LaunchConfig = new LaunchConfig(args);
+            LaunchConfig = new LaunchConfig(args, false);
             // Setup the Web Host Builder to listen on a port
             // But only do this when the parent host process is launched initially
             // not when Chromely launches itself as a child process

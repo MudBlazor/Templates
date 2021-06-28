@@ -19,6 +19,10 @@ namespace DefaultBlazor.Desktop.Chromely.AppFiles {
         /// <value> The command line arguments. </value>
         public string[] Args { get; protected set; }
 
+        /// <summary> If to use https. </summary>
+        /// <value> True if use https, false if not. </value>
+        public bool UseHttps { get; protected set; }
+
         /// <summary> Tracks the chromely configuration. </summary>
         /// <value> The chromely configuration. </value>
         public IChromelyConfiguration ChromelyConfig { get; protected set; }
@@ -29,8 +33,9 @@ namespace DefaultBlazor.Desktop.Chromely.AppFiles {
 
         /// <summary> Constructor. </summary>
         /// <param name="args"> The command line arguments. </param>
-        public LaunchConfig(string[] args) {
+        public LaunchConfig(string[] args, bool usehttps) {
             Args = args;
+            UseHttps = usehttps;
             Setup(args);
         }
 
@@ -39,7 +44,7 @@ namespace DefaultBlazor.Desktop.Chromely.AppFiles {
         public void Setup(string[] args) {
             ChromelyProcessType = ClientAppUtils.GetProcessType(args);
             ChromelyConfig = DefaultConfiguration.CreateForRuntimePlatform();
-            ChromelyConfig.WindowOptions.Title = "Title Window";
+            ChromelyConfig.WindowOptions.Title = "DefaultBlazor Desktop";
             ChromelyConfig.WindowOptions.RelativePathToIconFile = "wwwroot/favicon.ico";
             // browser dev tools
             ChromelyConfig.DebuggingMode = true;
@@ -48,7 +53,7 @@ namespace DefaultBlazor.Desktop.Chromely.AppFiles {
             // So only search for an available port on the main thread
             if (ChromelyProcessType == ProcessType.Browser) {
                 Port = ClientUrlHelper.GetAvailablePort();
-                AppUrls = ClientUrlHelper.GetLocalHttpUrls(Port).ToArray();
+                AppUrls = ClientUrlHelper.GetLocalHttpUrls(Port, UseHttps).ToArray();
                 ChromelyConfig.StartUrl = AppUrls.First();
             }
         }

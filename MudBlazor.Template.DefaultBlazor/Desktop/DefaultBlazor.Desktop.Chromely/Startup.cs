@@ -42,10 +42,12 @@ namespace DefaultBlazor.Desktop.Chromely {
             else {
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                if (Program.LaunchConfig.UseHttps)
+                    app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            if (Program.LaunchConfig.UseHttps)
+                app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
 

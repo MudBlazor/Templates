@@ -38,6 +38,10 @@ If you want something that will work under Linux then this is probably the best 
 Chromely in some ways is very similar to the Microsoft approach of using WebView2.
 Instead they use libcef which is part of chrome
 
+Note when publishing if you try to use the publish to single file option.
+Then this will prevent the automatic download of libcef files / runtime.
+In which case those libcef files need to be bundled with the app otherwise
+
 Upsides:
 
   * Currently works with Linux
