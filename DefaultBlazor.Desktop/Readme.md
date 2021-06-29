@@ -54,3 +54,19 @@ Downsides:
     So the IPC may be less direct that WebView2
   * I think it bundles libcef with the application or tries to download it if not present
     which can make the size of the application bigger (this is the equivilent of the webview2 runtime)
+
+
+### DefaultBlazor.Desktop.Maui
+
+Upsides
+
+  * Good for running on Android / Mobile
+  * Aims to be a single project for running on multiple platforms
+  * Supported by Microsoft
+
+Downsides:
+
+  * Does not yet support Linux but may in the future
+    (There is some gtk code but no webview2 for linux just yet)
+    https://github.com/dotnet/maui/tree/main/src/Compatibility/Core/src
+    https://github.com/MicrosoftEdge/WebView2Feedback/issues/645

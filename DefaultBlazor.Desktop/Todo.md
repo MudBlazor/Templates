@@ -1,22 +1,6 @@
 # TODO
 
 
-## .Net MAUI
-
-MAUI Should allow for applications that can be published to IOS / Android / MacOS etc via BlazorWebView
-However it seems to lack Linux support currently
-
-  * https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-5/
-  * https://www.c-sharpcorner.com/article/getting-started-with-maui-xamarin-forms-application-using-visual-studio-2019-pre/
-  * https://luismts.com/msbuild-dotnetmaui-preview-4/
-
-To Setup, run from the Visual Studio 2019 Preview command line
-```
-dotnet tool install -g redth.net.maui.check
-maui-check
-```
-
-
 ## WewbViw2 Frameless Window
 
 For a frameless window (where you implement the top bar yourself instead of using the default winform / wpf title bar)

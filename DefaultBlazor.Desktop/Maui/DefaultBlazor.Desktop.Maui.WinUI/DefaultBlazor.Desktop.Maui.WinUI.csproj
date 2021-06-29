@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-windows10.0.19041</TargetFrameworks>
+		<OutputType>WinExe</OutputType>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<SingleProject>true</SingleProject>
+		<RootNamespace>DefaultBlazor.Desktop.Maui</RootNamespace>
+
+		<!-- Required - Enable Single Project for WinUI -->
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<WindowsPackageType>MSIX</WindowsPackageType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiImage Include="..\DefaultBlazor.Desktop.Maui\Resources\appicon.svg" Link="Resources\appicon.svg" ForegroundFile="..\DefaultBlazor.Desktop.Maui\Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="..\DefaultBlazor.Desktop.Maui\Resources\appiconfg.svg" Link="Resources\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Images -->
+		<MauiImage Include="..\DefaultBlazor.Desktop.Maui\Resources\Images\*" Link="Resources\Images\%(Filename)%(Extension)" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="..\DefaultBlazor.Desktop.Maui\Resources\Fonts\*" Link="Resources\Fonts\%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\DefaultBlazor.Desktop.Maui\**\*.cs" Exclude="..\DefaultBlazor.Desktop.Maui\bin\**;..\DefaultBlazor.Desktop.Maui\obj\**;..\DefaultBlazor.Desktop.Maui\Android\**;..\DefaultBlazor.Desktop.Maui\iOS\**;..\DefaultBlazor.Desktop.Maui\MacCatalyst\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiXaml Include="..\DefaultBlazor.Desktop.Maui\**\*.xaml" Exclude="..\DefaultBlazor.Desktop.Maui\bin\**;..\DefaultBlazor.Desktop.Maui\obj\**" Link="%(RecursiveDir)%(FileName)%(Extension)" />
+		<_ThisProjectStaticWebAsset Include="..\DefaultBlazor.Desktop.Maui\wwwroot\**" Link="wwwroot\%(RecursiveDir)%(Filename)%(Extension)" RelativePath="%(RecursiveDir)%(Filename)%(Extension)" />
+		<None Include="@(_ThisProjectStaticWebAsset)" />
+		<RazorComponent Include="..\DefaultBlazor.Desktop.Maui\**\*.razor" Exclude="..\DefaultBlazor.Desktop.Maui\bin\**;..\DefaultBlazor.Desktop.Maui\obj\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="6.0.100-preview.5.794" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.0-preview.5.*" />
+		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0-preview" />
+		<PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.0-preview" />
+		<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.0-preview" />
+		<ProjectReference Include="..\..\DefaultBlazor.Desktop.Common\DefaultBlazor.Desktop.Common.csproj" />
+		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.16" />
+		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.16" />
+	</ItemGroup>
+
+</Project>
