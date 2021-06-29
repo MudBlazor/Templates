@@ -1,6 +1,6 @@
 ﻿{
   "profiles": {
-    "CrockPot.Web": {
+    "DefaultBlazor.Desktop.Web": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

@@ -1,7 +1,7 @@
 @namespace DefaultBlazor.Desktop.Wpf.App
 @using DefaultBlazor.Desktop.Common.Shared
 
-<Router AppAssembly="@typeof(Program).Assembly"
+<Router AppAssembly="@GetType().Assembly"
         AdditionalAssemblies="new[] { typeof(MainLayout).Assembly }"
         PreferExactMatches="@true">
     <Found Context="routeData">
