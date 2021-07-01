@@ -38,10 +38,6 @@ If you want something that will work under Linux then this is probably the best 
 Chromely in some ways is very similar to the Microsoft approach of using WebView2.
 Instead they use libcef which is part of chrome
 
-Note when publishing if you try to use the publish to single file option.
-Then this will prevent the automatic download of libcef files / runtime.
-In which case those libcef files need to be bundled with the app otherwise
-
 Upsides:
 
   * Currently works with Linux
@@ -54,6 +50,14 @@ Downsides:
     So the IPC may be less direct that WebView2
   * I think it bundles libcef with the application or tries to download it if not present
     which can make the size of the application bigger (this is the equivilent of the webview2 runtime)
+
+#### Libcef notes
+
+Note when publishing if you try to use the publish to single file option.
+Then this will prevent the automatic download of libcef files / runtime.
+In which case those libcef files need to be bundled with the app otherwise
+
+  * https://github.com/chromelyapps/Chromely/blob/master/Documents/cef_binaries_download.md
 
 
 ### DefaultBlazor.Desktop.Maui
@@ -70,3 +74,9 @@ Downsides:
     (There is some gtk code but no webview2 for linux just yet)
     https://github.com/dotnet/maui/tree/main/src/Compatibility/Core/src
     https://github.com/MicrosoftEdge/WebView2Feedback/issues/645
+
+For the Windows Desktop version you will need some extensions installing under Visual Studio
+
+  * Project Reunion
+    In the youtube clip it recommends the preview version, but I think the non preview version is now ahead with a later version number
+  * Single Project MSIX Packaging Tools

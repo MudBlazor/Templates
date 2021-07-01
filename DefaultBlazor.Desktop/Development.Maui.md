@@ -88,7 +88,8 @@ This can result in strange build errors for Android
 
   * https://docs.microsoft.com/en-us/answers/questions/313806/why-am-i-getting-this-error-on-a-new-xamarin-forms.html
 
-One way around this is to enable this Policy Setting under Windows
+One way around this is to enable this Policy Setting under Windows.
+Note you will need to reboot after changing this setting.
 
   * https://www.microfocus.com/documentation/filr/filr-4/filr-desktop/t47bx2ogpfz7.html
 
