@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "MudBlazor Contributors",
+    "classifications": [ "Web", "Blazor"],
+    "identity": "MudBlazor.Template.DefaultBlazor.Server",
+    "name": "MudBlazor Server Template: default project",
+    "shortName": "mudblazor",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "DefaultBlazor.Server",
+    "preferNameDirectory": true,
+}
