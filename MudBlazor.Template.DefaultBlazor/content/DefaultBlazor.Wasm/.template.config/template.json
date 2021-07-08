@@ -1,9 +1,9 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "MudBlazor Contributors",
-    "classifications": [ "Web", "Blazor", "WebAssembly" ],
+    "classifications": [ "Web", "Blazor", "WebAssembly", "Mudblazor" ],
     "identity": "MudBlazor.Template.DefaultBlazor.Wasm",
-    "name": "MudBlazor WebAssembly Template: default project",
+    "name": "MudBlazor WebAssembly Template",
     "shortName": "mudblazorwasm",
     "tags": {
         "language": "C#",
@@ -11,4 +11,6 @@
     },
     "sourceName": "DefaultBlazor.Wasm",
     "preferNameDirectory": true,
+    "defaultName": "DefaultBlazor.Wasm",
+    "description": "Default Blazor wasm template with MudBlazor."
 }
