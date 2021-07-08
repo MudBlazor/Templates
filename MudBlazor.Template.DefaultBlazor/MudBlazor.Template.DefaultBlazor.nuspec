@@ -3,7 +3,7 @@
   <metadata>
     <id>MudBlazor.Template.DefaultBlazor</id>
     <version>1.0.0</version>
-    <title>Mud Blazor Templates</title>
+    <title>MudBlazor Templates</title>
     <iconUrl>https://raw.githubusercontent.com/Garderoben/MudBlazor/dev/content/logo.png</iconUrl>
     <summary>A set of Templates to create Blazor Server and WebAssembly apps using MudBlazor.</summary>
     <description>A set of Templates to create Blazor Server and WebAssembly apps using MudBlazor</description>
