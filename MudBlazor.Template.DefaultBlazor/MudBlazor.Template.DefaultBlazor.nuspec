@@ -4,16 +4,21 @@
     <id>MudBlazor.Template.DefaultBlazor</id>
     <version>1.0.0</version>
     <title>MudBlazor Templates</title>
-    <iconUrl>https://raw.githubusercontent.com/Garderoben/MudBlazor/dev/content/logo.png</iconUrl>
+    <icon>Nuget.png</icon>
+    <license type="file">LICENSE.txt</license>
     <summary>A set of Templates to create Blazor Server and WebAssembly apps using MudBlazor.</summary>
     <description>A set of Templates to create Blazor Server and WebAssembly apps using MudBlazor</description>
     <authors>MudBlazor Contributors</authors>
     <owners>MudBlazor Contributors</owners>
-    <projectUrl>https://github.com/Garderoben/MudBlazor</projectUrl>
+    <projectUrl>https://github.com/Garderoben/MudBlazor.Templates</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>blazor mudblazor app dotnet new template c# csharp</tags>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
   </metadata>
+  <files>
+    <file src="..\LICENSE.txt" target="" />
+    <file src="..\content\Nuget.png" />
+  </files>
 </package>
