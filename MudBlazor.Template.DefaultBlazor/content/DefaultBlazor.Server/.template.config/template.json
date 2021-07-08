@@ -4,7 +4,7 @@
     "classifications": [ "Web", "Blazor"],
     "identity": "MudBlazor.Template.DefaultBlazor.Server",
     "name": "MudBlazor Server Template: default project",
-    "shortName": "mudblazor",
+    "shortName": "mudblazorserver",
     "tags": {
         "language": "C#",
         "type": "project"
