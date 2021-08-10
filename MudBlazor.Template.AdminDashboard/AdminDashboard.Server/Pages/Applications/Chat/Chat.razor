@@ -3,19 +3,19 @@
 
 <div class="d-flex flex-grow-1 flex-row">
     <MudHidden Breakpoint="Breakpoint.SmAndDown">
-        <MudPaper Elevation="25" Class="pa-3 mr-6" MinWidth="250px">
+        <MudPaper  Class="pa-3 mr-6" MinWidth="250px">
             <MudButton EndIcon="@Icons.Material.Filled.Add" Color="Color.Secondary" FullWidth="true">Create Channel</MudButton>
             <ChatChannels />
         </MudPaper>
     </MudHidden>
-    <MudPaper Elevation="25" Class="py-4 flex-grow-1">
+    <MudPaper  Class="py-4 flex-grow-1">
         <MudToolBar Dense="true">
             <MudHidden Breakpoint="Breakpoint.MdAndUp">
                 <MudIconButton OnClick="@(() => OpenDrawer(Anchor.Left))" Icon="@Icons.Material.Outlined.Menu" Color="Color.Inherit" Class="mr-2 ml-n2" />
             </MudHidden>
             <MudText Typo="Typo.h6" Inline="true" Class="mr-2">#</MudText>
             <MudText Typo="Typo.h6">chat</MudText>
-            <MudToolBarSpacer />
+            <MudSpacer />
             <MudIconButton Icon="@Icons.Material.Outlined.Notifications" />
             <MudIconButton Icon="@Icons.Material.Outlined.PushPin" />
             <MudHidden Breakpoint="Breakpoint.MdAndUp">
@@ -28,7 +28,7 @@
                 <UserMessage UserName="@message.UserName" Message="@message.Message" ChatUser="@GetUser(message.UserName)" />
             }
         </div>
-        <MudPaper Elevation="25" Class="d-flex flex-row px-2 mx-4" Style="background-color: var(--mud-palette-background-grey);">
+        <MudPaper  Class="d-flex flex-row px-2 mx-4" Style="background-color: var(--mud-palette-background-grey);">
             <MudIconButton Icon="@Icons.Material.Filled.AddCircle"></MudIconButton>
             <MudTextField T="string" Placeholder="Message #chat" DisableUnderLine="true" Class="mt-n2 mx-4"></MudTextField>
             <MudIconButton Icon="@IconGift"></MudIconButton>
@@ -37,7 +37,7 @@
         </MudPaper>
     </MudPaper>
     <MudHidden Breakpoint="Breakpoint.SmAndDown">
-        <MudPaper Elevation="25" Class="pa-3 pb-16 ml-6" MinWidth="250px">
+        <MudPaper  Class="pa-3 pb-16 ml-6" MinWidth="250px">
             <ChatUsers chatUsers="chatUsers" />
         </MudPaper>
     </MudHidden>
