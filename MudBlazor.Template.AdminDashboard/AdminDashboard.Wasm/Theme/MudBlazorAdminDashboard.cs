@@ -19,7 +19,7 @@ namespace AdminDashboard.Wasm.Theme
 
             LayoutProperties = new LayoutProperties()
             {
-                DefaultBorderRadius = "3px"
+                DefaultBorderRadius = "6px"
             };
 
             Typography = new Typography()

@@ -64,7 +64,15 @@
 
 
 @code {
-    private ThemeManagerTheme _themeManager = new ThemeManagerTheme();
+    private ThemeManagerTheme _themeManager = new ThemeManagerTheme
+    {
+        Theme = new MudBlazorAdminDashboard(),
+        DrawerClipMode = DrawerClipMode.Always,
+        FontFamily = "Montserrat",
+        DefaultBorderRadius = 6,
+        AppBarElevation = 1,
+        DrawerElevation = 1
+    };
 
     public bool _drawerOpen = true;
     public bool _themeManagerOpen = false;
@@ -87,12 +95,6 @@
 
     protected override void OnInitialized()
     {
-        _themeManager.Theme = new MudBlazorAdminDashboard();
-        _themeManager.DrawerClipMode = DrawerClipMode.Always;
-        _themeManager.FontFamily = "Montserrat";
-        _themeManager.DefaultBorderRadius = 6;
-        _themeManager.AppBarElevation = 1;
-        _themeManager.DrawerElevation = 1;
         StateHasChanged();
     }
 
