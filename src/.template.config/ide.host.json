@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json.schemastore.org/vs-2017.3.host",
+    "order": 0,
+    "icon": "../../content/Nuget.png",
+    "symbolInfo": [
+      {       
+        "id": "WasmHosted",
+        "name": 
+        {
+          "text": "ASP.NET Core Hosted."
+        },
+        "isVisible": "IsWasm"      
+      },
+      {       
+        "id": "WasmPWA",
+        "name": 
+        {
+          "text": "Progressive Web Application."
+        },
+        "isVisible": "IsWasm"       
+      }
+    ]
+}

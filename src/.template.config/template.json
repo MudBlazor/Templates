@@ -1,13 +1,15 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "author": "Garderoben, Henon and Contributors",
+    "author": "MudBlazor Team",
     "classifications": [
-        "MudBlazor", "Templates", "Blazor"
+        "MudBlazor", "Blazor", "Linux", "macOS", "Windows", "Windows", "Cloud", "Web"
     ],
     "name": "MudBlazor Templates",
+    "description": "Blazor Templates pre configured with MudBlazor.",
     "identity": "MudBlazor.Templates",
     "groupIdentity": "MudBlazor.Templates",
-    "shortName": "mudblazor",
+    "shortName": "mudblazor-templates",
+    "defaultName": "MudBlazorTemplates",
     "tags": {
         "language": "C#",
         "type": "project"
@@ -15,59 +17,53 @@
     "sourceName": "MudBlazor.Template",
     "preferNameDirectory": false,
     "symbols": {
-        "host": {
+        "Host": {
             "type": "parameter",
             "datatype": "choice",
-            "defaultValue": "wasm",
+            "defaultValue": "Wasm",
             "choices": [
                 {
-                    "choice": "wasm",
+                    "choice": "Wasm",
                     "description": "Blazor WebAssembly"
                 },
                 {
-                    "choice": "server",
+                    "choice": "Server",
                     "description": "Blazor Server-Side"
-                },
-                {
-                    "choice": "hosted",
-                    "description": "Blazor WebAssembly - ASP.NET Core Hosted"
                 }
             ]
         },
-        "template": {
+        "Template": {
             "type": "parameter",
             "dataType": "choice",
-            "description": "Template you want to use.",
-            "defaultValue": "default",
+            "description": "MudBlazor Template you want to use as base.",
+            "defaultValue": "Default",
             "choices": [
                 {
-                    "choice": "default",
+                    "choice": "Default",
                     "description": "Default Blazor Template with MudBlazor."
                 },
                 {
-                    "choice": "admindashboard",
+                    "choice": "AdminDashboard",
                     "description": "Admin Dashboard Template with MudBlazor."
                 }
             ]
         },
-        "Hosted": {
-        "type": "parameter",
-        "datatype": "bool",
-        "defaultValue": "false",
-        "description": "If specified, includes an ASP.NET Core host for the Blazor WebAssembly app. This option only applies if Host is WASM."
-        },
-        "PWA": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "If specified, produces a Progressive Web Application (PWA) supporting installation and offline use. This option only applies if Host is WASM."
-        },
-        "NoHttps": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Whether to turn off HTTPS."
+        "IsWasm": {
+            "type": "computed",
+            "value": "(Host == 'Wasm')"
           },
+        "WasmHosted": {
+            "type": "parameter",
+            "datatype": "bool",
+            "description": "ASP.NET Core Hosted.",
+            "defaultValue": "false"
+        },
+        "WasmPWA": {
+            "type": "parameter",
+            "datatype": "bool",
+            "description": "Progressive Web Application.",
+            "defaultValue": "false"
+        },
         "skipRestore": {
             "type": "parameter",
             "datatype": "bool",
@@ -82,13 +78,22 @@
     ],
     "sources": [
         {
-            "condition": "(host == 'wasm')",
-            "source": "../.templates/templates/wasm",
+            "condition": "(Template == 'default')",
+            "source": "./MudBlazor.Templates/DefaultBlazor",
             "target": "./"
         },
         {
-            "condition": "(host == 'server')",
-            "source": "../.templates/templates/server",
+            "source": "./.templates/base",
+            "target": "./"
+        },
+        {
+            "condition": "(Type == 'wasm')",
+            "source": "./.templates/wasm",
+            "target": "./"
+        },
+        {
+            "condition": "(Type == 'server')",
+            "source": "./.templates/server",
             "target": "./"
         }
     ],
