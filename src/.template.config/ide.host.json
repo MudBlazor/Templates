@@ -1,23 +1,39 @@
 {
     "$schema": "http://json.schemastore.org/vs-2017.3.host",
     "order": 0,
-    "icon": "../../content/Nuget.png",
+    "icon": "icon.png",
     "symbolInfo": [
+      {
+        "id": "Host",
+        "name": 
+        {
+          "text": "Project Type"
+        },
+        "isVisible": true  
+      },
+      {
+        "id": "Template",
+        "name": 
+        {
+          "text": "Template variant"
+        },
+        "isVisible": true   
+      },
       {       
         "id": "WasmHosted",
         "name": 
         {
-          "text": "ASP.NET Core Hosted."
+          "text": "ASP.NET Core hosted"
         },
-        "isVisible": "IsWasm"      
+        "isVisible": true     
       },
       {       
         "id": "WasmPWA",
         "name": 
         {
-          "text": "Progressive Web Application."
+          "text": "Progressive Web Application"
         },
-        "isVisible": "IsWasm"       
+        "isVisible": true 
       }
     ]
 }
