@@ -1,0 +1,134 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Garderoben, Henon and Contributors",
+    "classifications": [
+        "MudBlazor", "Templates", "Blazor"
+    ],
+    "name": "MudBlazor Templates",
+    "identity": "MudBlazor.Templates",
+    "groupIdentity": "MudBlazor.Templates",
+    "shortName": "mudblazor",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "MudBlazor.Template",
+    "preferNameDirectory": false,
+    "symbols": {
+        "host": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "wasm",
+            "choices": [
+                {
+                    "choice": "wasm",
+                    "description": "Blazor WebAssembly"
+                },
+                {
+                    "choice": "server",
+                    "description": "Blazor Server-Side"
+                },
+                {
+                    "choice": "hosted",
+                    "description": "Blazor WebAssembly - ASP.NET Core Hosted"
+                }
+            ]
+        },
+        "template": {
+            "type": "parameter",
+            "dataType": "choice",
+            "description": "Template you want to use.",
+            "defaultValue": "default",
+            "choices": [
+                {
+                    "choice": "default",
+                    "description": "Default Blazor Template with MudBlazor."
+                },
+                {
+                    "choice": "admindashboard",
+                    "description": "Admin Dashboard Template with MudBlazor."
+                }
+            ]
+        },
+        "Hosted": {
+        "type": "parameter",
+        "datatype": "bool",
+        "defaultValue": "false",
+        "description": "If specified, includes an ASP.NET Core host for the Blazor WebAssembly app. This option only applies if Host is WASM."
+        },
+        "PWA": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "If specified, produces a Progressive Web Application (PWA) supporting installation and offline use. This option only applies if Host is WASM."
+        },
+        "NoHttps": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Whether to turn off HTTPS."
+          },
+        "skipRestore": {
+            "type": "parameter",
+            "datatype": "bool",
+            "description": "If specified, skips the automatic restore of the project on create.",
+            "defaultValue": "false"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "./"
+        }
+    ],
+    "sources": [
+        {
+            "condition": "(host == 'wasm')",
+            "source": "../.templates/templates/wasm",
+            "target": "./"
+        },
+        {
+            "condition": "(host == 'server')",
+            "source": "../.templates/templates/server",
+            "target": "./"
+        }
+    ],
+    "SpecialCustomOperations": {
+        "**/*.razor": {
+            "operations": [
+                {
+                    "type": "conditional",
+                    "configuration": {
+                        "if": [
+                            "//#if"
+                        ],
+                        "else": [
+                            "//#else"
+                        ],
+                        "elseif": [
+                            "//#elseif"
+                        ],
+                        "endif": [
+                            "//#endif"
+                        ],
+                        "trim": true,
+                        "wholeLine": true,
+                        "evaluator": "C++"
+                    }
+                }
+            ]
+        }
+    },
+    "postActions": [
+        {
+            "condition": "(!skipRestore)",
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [
+                {
+                    "text": "Run 'dotnet restore'"
+                }
+            ],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        }
+    ]
+}
