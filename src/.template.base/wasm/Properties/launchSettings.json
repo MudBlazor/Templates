@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WASM": {
+    "Mudblazor.Template": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

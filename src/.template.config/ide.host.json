@@ -1,39 +1,23 @@
 {
-    "$schema": "http://json.schemastore.org/vs-2017.3.host",
-    "order": 0,
-    "icon": "icon.png",
-    "symbolInfo": [
+  "$schema": "http://json.schemastore.org/vs-2017.3.host",
+  "order": 0,
+  "icon": "icon.png",
+  "symbolInfo": [
+    {       
+      "id": "Host",
+      "name": 
       {
-        "id": "Host",
-        "name": 
-        {
-          "text": "Project Type"
-        },
-        "isVisible": true  
+        "text": "Project Type"
       },
+      "isVisible": true      
+    },
+    {       
+      "id": "Template",
+      "name": 
       {
-        "id": "Template",
-        "name": 
-        {
-          "text": "Template variant"
-        },
-        "isVisible": true   
+        "text": "MudBlazor template variant"
       },
-      {       
-        "id": "WasmHosted",
-        "name": 
-        {
-          "text": "ASP.NET Core hosted"
-        },
-        "isVisible": true     
-      },
-      {       
-        "id": "WasmPWA",
-        "name": 
-        {
-          "text": "Progressive Web Application"
-        },
-        "isVisible": true 
-      }
-    ]
+      "isVisible": true      
+    }
+  ]
 }

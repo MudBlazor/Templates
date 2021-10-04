@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <PropertyGroup>
+	<PackageIcon>Nuget.png</PackageIcon>
+	<PackageType>Template</PackageType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageIcon>Nuget.png</PackageIcon>
+	<PackageId>MudBlazor.Templates</PackageId>
+	<PackageTags>Blazor, MudBlazor, Templates, Layout, Components, UI, Dashboard, Admin Dashboard</PackageTags>
+    
     <Company>MudBlazor</Company>
-    <Authors>Garderoben, Henon and Contributors</Authors>
+    <Authors>MudBlazor Team</Authors>
     <Copyright>Copyright 2020-2021 Jonny Larsson</Copyright>
-    <PackageTags>Blazor, MudBlazor, Templates, Layout, Components, UI, Dashboard, Admin Dashboard</PackageTags>
+	<Title>MudBlazor Templates</Title>
     <Description>Blazor templates pre configured with MudBlazor.</Description>
     <PackageProjectUrl>http://mudblazor.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MudBlazor/Templates</RepositoryUrl>
@@ -26,9 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include=".template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
-	  <Content Include=".templates\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
-    <Content Include="**\MudBlazor.Templates\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+	<Content Include="**\.template.base\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+    <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+    <Content Include="**\.template.mudblazor\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
     <Compile Remove="**\*" />
   </ItemGroup>
 

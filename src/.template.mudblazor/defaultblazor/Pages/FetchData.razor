@@ -1,6 +1,10 @@
 ﻿@page "/fetchdata"
+//#if (IsWasm)
 @inject HttpClient Http
-
+//#elseif (IsServer)
+@using DefaultBlazor.Server.Data
+@inject WeatherForecastService ForecastService
+//#endif
 
 <MudText Typo="Typo.h3" GutterBottom="true">Weather forecast</MudText>
 <MudText Class="mb-8">This component demonstrates fetching data from the server.</MudText>
@@ -35,9 +39,13 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+    //#if (IsServer)
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    //#elseif (IsWasm)
         forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    //#endif
     }
-
+//#if (IsWasm)
     public class WeatherForecast
     {
         public DateTime Date { get; set; }
@@ -48,4 +56,5 @@ else
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
+//#endif
 }

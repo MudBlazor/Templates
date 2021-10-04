@@ -1,139 +1,181 @@
 {
-    "$schema": "http://json.schemastore.org/template",
-    "author": "MudBlazor Team",
-    "classifications": [
-        "MudBlazor", "Blazor", "Linux", "macOS", "Windows", "Windows", "Cloud", "Web"
-    ],
-    "name": "MudBlazor Templates",
-    "description": "Blazor Templates pre configured with MudBlazor.",
-    "identity": "MudBlazor.Templates",
-    "groupIdentity": "MudBlazor.Templates",
-    "shortName": "mudblazor-templates",
-    "defaultName": "MudBlazorTemplates",
-    "tags": {
-        "language": "C#",
-        "type": "project"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "MudBlazor Team",
+  "classifications": [
+    "Blazor",
+    "Desktop",
+    "macOS",
+    "Windows",
+    "Cloud",
+    "Web"
+  ],
+  "name": "MudBlazor Templates",
+  "description": "Blazor Templates pre configured with MudBlazor.",
+  "identity": "MudBlazor.Templates",
+  "groupIdentity": "MudBlazor.Templates",
+  "shortName": "mudblazor",
+  "defaultName": "MudBlazorTemplates",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "MudBlazor.Template",
+  "preferNameDirectory": false,
+  "symbols": {
+    "Host": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "Wasm",
+      "choices": [
+        {
+          "choice": "Wasm",
+          "description": "Blazor WebAssembly"
+        },
+        {
+          "choice": "Wasm-Hosted",
+          "description": "Blazor WebAssembly - ASP.NET Core Hosted"
+        },
+        {
+          "choice": "Wasm-PWA",
+          "description": "Blazor WebAssembly - Progressive Web Application"
+        },
+        {
+          "choice": "Wasm-PWA-Hosted",
+          "description": "Blazor WebAssembly - Hosted & PWA"
+        },
+        {
+          "choice": "Server",
+          "description": "Blazor Server-Side"
+        }
+      ]
     },
-    "sourceName": "MudBlazor.Template",
-    "preferNameDirectory": false,
-    "symbols": {
-        "Host": {
-            "type": "parameter",
-            "datatype": "choice",
-            "defaultValue": "Wasm",
-            "choices": [
-                {
-                    "choice": "Wasm",
-                    "description": "Blazor WebAssembly"
-                },
-                {
-                    "choice": "Server",
-                    "description": "Blazor Server-Side"
-                }
-            ]
+    "Template": {
+      "type": "parameter",
+      "dataType": "choice",
+      "description": "Template you want to use as base for your project.",
+      "defaultValue": "Default",
+      "choices": [
+        {
+          "choice": "Default",
+          "description": "Default Blazor Template with MudBlazor."
         },
-        "Template": {
-            "type": "parameter",
-            "dataType": "choice",
-            "description": "MudBlazor Template you want to use as base.",
-            "defaultValue": "Default",
-            "choices": [
-                {
-                    "choice": "Default",
-                    "description": "Default Blazor Template with MudBlazor."
-                },
-                {
-                    "choice": "AdminDashboard",
-                    "description": "Admin Dashboard Template with MudBlazor."
-                }
-            ]
-        },
-        "IsWasm": {
-            "type": "computed",
-            "value": "(Host == 'Wasm')"
-          },
-        "WasmHosted": {
-            "type": "parameter",
-            "datatype": "bool",
-            "description": "ASP.NET Core Hosted.",
-            "defaultValue": "false"
-        },
-        "WasmPWA": {
-            "type": "parameter",
-            "datatype": "bool",
-            "description": "Progressive Web Application.",
-            "defaultValue": "false"
-        },
-        "skipRestore": {
-            "type": "parameter",
-            "datatype": "bool",
-            "description": "If specified, skips the automatic restore of the project on create.",
-            "defaultValue": "false"
+        {
+          "choice": "AdminDashboard",
+          "description": "Admin Dashboard Template with MudBlazor."
         }
+      ]
     },
-    "primaryOutputs": [
-        {
-            "path": "./"
-        }
-    ],
-    "sources": [
-        {
-            "condition": "(Template == 'default')",
-            "source": "./MudBlazor.Templates/DefaultBlazor",
-            "target": "./"
-        },
-        {
-            "source": "./.templates/base",
-            "target": "./"
-        },
-        {
-            "condition": "(Type == 'wasm')",
-            "source": "./.templates/wasm",
-            "target": "./"
-        },
-        {
-            "condition": "(Type == 'server')",
-            "source": "./.templates/server",
-            "target": "./"
-        }
-    ],
-    "SpecialCustomOperations": {
-        "**/*.razor": {
-            "operations": [
-                {
-                    "type": "conditional",
-                    "configuration": {
-                        "if": [
-                            "//#if"
-                        ],
-                        "else": [
-                            "//#else"
-                        ],
-                        "elseif": [
-                            "//#elseif"
-                        ],
-                        "endif": [
-                            "//#endif"
-                        ],
-                        "trim": true,
-                        "wholeLine": true,
-                        "evaluator": "C++"
-                    }
-                }
-            ]
-        }
+    "IsWasm": {
+      "type": "computed",
+      "value": "(Host == \"Wasm\" || Host == \"Wasm-Hosted\" || Host == \"Wasm-PWA\" || Host == \"Wasm-PWA-Hosted\")"
     },
-    "postActions": [
+    "IsPwa": {
+      "type": "computed",
+      "value": "(Host == \"Wasm-PWA\" || Host == \"Wasm-PWA-Hosted\")"
+    },
+    "IsServer": {
+      "type": "computed",
+      "value": "(Host == \"Server\")"
+    },
+    "skipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, skips the automatic restore of the project on create.",
+      "defaultValue": "false"
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "./"
+    }
+  ],
+  "sources": [
+    {
+      "condition": "(Template == 'Default')",
+      "source": "./.template.mudblazor/defaultblazor",
+      "target": "./"
+    },
+    {
+      "source": "./.template.base/common",
+      "target": "./"
+    },
+    {
+      "condition": "(Host == 'Wasm' || Host == 'Wasm-PWA')",
+      "source": "./.template.base/wasm",
+      "target": "./"
+    },
+    {
+      "condition": "(Host == 'Wasm-PWA')",
+      "source": "./.template.base/wasm-pwa",
+      "target": "./"
+    },
+    {
+      "condition": "(Host == 'Server')",
+      "source": "./.template.base/server",
+      "target": "./"
+    }
+  ],
+  "SpecialCustomOperations": {
+    "**/*.razor": {
+      "operations": [
         {
-            "condition": "(!skipRestore)",
-            "description": "Restore NuGet packages required by this project.",
-            "manualInstructions": [
-                {
-                    "text": "Run 'dotnet restore'"
-                }
+          "type": "conditional",
+          "configuration": {
+            "if": [
+              "//#if"
             ],
-            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
-            "continueOnError": true
+            "else": [
+              "//#else"
+            ],
+            "elseif": [
+              "//#elseif"
+            ],
+            "endif": [
+              "//#endif"
+            ],
+            "trim": true,
+            "wholeLine": true,
+            "evaluator": "C++"
+          }
         }
-    ]
+      ]
+    },
+    "**/*.html": {
+      "operations": [
+        {
+          "type": "conditional",
+          "configuration": {
+            "if": [
+              "//#if"
+            ],
+            "else": [
+              "//#else"
+            ],
+            "elseif": [
+              "//#elseif"
+            ],
+            "endif": [
+              "//#endif"
+            ],
+            "trim": true,
+            "wholeLine": true,
+            "evaluator": "C++"
+          }
+        }
+      ]
+    }
+  },
+  "postActions": [
+    {
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
 }
