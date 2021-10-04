@@ -96,6 +96,11 @@
       "target": "./"
     },
     {
+      "condition": "(Template == 'AdminDashboard')",
+      "source": "./.template.mudblazor/admindashboard",
+      "target": "./"
+    },
+    {
       "source": "./.template.base/common",
       "target": "./"
     },

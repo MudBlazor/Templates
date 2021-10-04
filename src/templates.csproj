@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
+	<Version>0.0.2</Version>
 	<PackageIcon>Nuget.png</PackageIcon>
 	<PackageType>Template</PackageType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -19,6 +20,7 @@
     <PackageProjectUrl>http://mudblazor.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MudBlazor/Templates</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+	  
 	<IncludeContentInPack>true</IncludeContentInPack>
 	<IncludeBuildOutput>false</IncludeBuildOutput>
 	<ContentTargetFolders>content</ContentTargetFolders>

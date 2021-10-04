@@ -1,0 +1,65 @@
+﻿@page "/pages/utility/faq"
+
+<MudText Typo="Typo.h5" Color="Color.Primary" Class="mb-4">FAQ</MudText>
+<MudGrid>
+    <MudItem xs="12" sm="12" md="10">
+        <MudPaper  Class="px-4 pb-3 mb-8">
+            <MudTextField T="string" Placeholder="Search" DisableUnderLine="true" Adornment="Adornment.End" AdornmentIcon="@Icons.Filled.Search"></MudTextField>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="2"></MudItem>
+    <MudItem xs="12" sm="12" md="10">
+        <MudText Typo="Typo.h6" GutterBottom="true">General</MudText>
+        <MudExpansionPanels >
+            <MudExpansionPanel Text="How do i install MudBlazor?">
+                <MudText Typo="Typo.body2">Please check the installation instructions <MudLink Href="https://mudblazor.com/getting-started/installation">here</MudLink></MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Text="Whats the purpose of this template">
+                <MudText Typo="Typo.body2">Mostly for demonstration purposes but can be stripped and used for any project, in any way.</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Text="How can i get help regarding MudBlazor?">
+                <MudText Typo="Typo.body2">You can find links to our community chats on our main <MudLink Href="https://mudblazor.com/">website</MudLink></MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Text="I have a question or a problem regarding this template">
+                <MudText Typo="Typo.body2">While we dont offer any real support, you can always try to ask for help in one of our community groups.</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Text="You guys are awesome, how can i support you?">
+                <MudText Typo="Typo.body2">Helping out others who have questions regarding Mudblazor in our Discord or Gitter chat is highly appreciated! Adding and fixing issues, working on new features that we have planned or you can donate over at <MudLink Href="https://opencollective.com/mudblazor">our Open Collective page.</MudLink></MudText>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+
+        <MudText Typo="Typo.h6" GutterBottom="true" Class="mt-8">Licensing</MudText>
+        <MudExpansionPanels >
+            <MudExpansionPanel Text="Unlimited">
+                <MudText Typo="Typo.body2">Do what you want, its MIT.</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Text="Commercial">
+                <MudText Typo="Typo.body2">Duuude, i said MIT!</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Text="Personal">
+                <MudText Typo="Typo.body2">M.I.T</MudText>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+
+        <MudText Typo="Typo.h6" GutterBottom="true" Class="mt-8">Refund Policy</MudText>
+        <MudExpansionPanels >
+            <MudExpansionPanel Text="Can i refund MudBlazor?">
+                <MudText Typo="Typo.body2">No you cant, since its a open source, MIT project and is free to use.</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Text="What if i still want a refund?">
+                <MudText Typo="Typo.body2">Well you'r out of luck here.</MudText>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="2">
+        <MudText Typo="Typo.h6" GutterBottom="true">Categorys</MudText>
+        <MudButton Variant="Variant.Text" Color="Color.Secondary" Class="d-flex">General</MudButton>
+        <MudButton Variant="Variant.Text" Color="Color.Secondary" Class="d-flex">Licenses</MudButton>
+        <MudButton Variant="Variant.Text" Color="Color.Secondary" Class="d-flex">Refund Policy</MudButton>
+    </MudItem>
+</MudGrid>
+
+@code
+{
+
+}
