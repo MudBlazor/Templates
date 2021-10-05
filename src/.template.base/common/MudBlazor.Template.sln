@@ -38,7 +38,6 @@ Global
 		{557A6101-669B-407C-959E-0063FF85C0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{557A6101-669B-407C-959E-0063FF85C0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{557A6101-669B-407C-959E-0063FF85C0D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		EndProject
 		//#endif
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
