@@ -137,14 +137,24 @@
       "target": "./"
     },
     {
-      "condition": "(Template == 'Default')",
+      "condition": "(Template == 'Default' && !IsHosted)",
       "source": "./.template.mudblazor/defaultblazor",
       "target": "./"
     },
     {
-      "condition": "(Template == 'AdminDashboard')",
+      "condition": "(Template == 'AdminDashboard' && IsHosted)",
       "source": "./.template.mudblazor/admindashboard",
       "target": "./"
+    },
+    {
+      "condition": "(Template == 'Default' && !IsHosted)",
+      "source": "./.template.mudblazor/defaultblazor",
+      "target": "./Client"
+    },
+    {
+      "condition": "(Template == 'AdminDashboard' && IsHosted)",
+      "source": "./.template.mudblazor/admindashboard",
+      "target": "./Client"
     }
   ],
   "SpecialCustomOperations": {
