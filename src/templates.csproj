@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-	<Version>0.0.6</Version>
+	<Version>0.0.7</Version>
 	<PackageIcon>Nuget.png</PackageIcon>
 	<PackageType>Template</PackageType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
