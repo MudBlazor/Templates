@@ -77,6 +77,10 @@
       "type": "computed",
       "value": "(Host == \"Server\")"
     },
+    "IsAdminDashboard": {
+      "type": "computed",
+      "value": "(Template == \"AdminDashboard\")"
+    },
     "skipRestore": {
       "type": "parameter",
       "datatype": "bool",

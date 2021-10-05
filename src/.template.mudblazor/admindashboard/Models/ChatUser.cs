@@ -1,6 +1,6 @@
 ﻿using MudBlazor;
 
-namespace MudBlazor.Template.Models
+namespace MudBlazor.Template.Shared
 {
     public class ChatUser
     {

@@ -1,6 +1,6 @@
 ﻿using MudBlazor;
 
-namespace MudBlazor.Template.Theme
+namespace MudBlazor.Template.Shared
 {
     public class MudBlazorAdminDashboard : MudTheme
     {
@@ -19,7 +19,7 @@ namespace MudBlazor.Template.Theme
 
             LayoutProperties = new LayoutProperties()
             {
-                DefaultBorderRadius = "6px"
+                DefaultBorderRadius = "6px",
             };
 
             Typography = new Typography()

@@ -1,12 +1,12 @@
 ﻿@inherits LayoutComponentBase
 
 
-<MudThemeProvider Theme="_themeManager.Theme" />
+<MudThemeProvider Theme="_theme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="_themeManager.AppBarElevation">
+    <MudAppBar Elevation="25">
         <MudHidden Breakpoint="Breakpoint.SmAndDown">
             <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Size="Size.Large" />
         </MudHidden>
@@ -41,7 +41,7 @@
             </ChildContent>
         </MudMenu>
     </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" Elevation="_themeManager.DrawerElevation" ClipMode="_themeManager.DrawerClipMode">
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="25" ClipMode="DrawerClipMode.Always">
         <NavMenu />
     </MudDrawer>
     <MudMainContent>
@@ -58,39 +58,17 @@
             @Body
         </MudContainer>
     </MudMainContent>
-    <MudThemeManagerButton OnClick="@((e) => OpenThemeManager(true))" />
-    <MudThemeManager Open="_themeManagerOpen" OpenChanged="OpenThemeManager" Theme="_themeManager" ThemeChanged="UpdateTheme" />
 </MudLayout>
 
 
 @code {
-    private ThemeManagerTheme _themeManager = new ThemeManagerTheme
-    {
-        Theme = new MudBlazorAdminDashboard(),
-        DrawerClipMode = DrawerClipMode.Always,
-        FontFamily = "Montserrat",
-        DefaultBorderRadius = 6,
-        AppBarElevation = 1,
-        DrawerElevation = 1
-    };
+    private MudBlazorAdminDashboard _theme = new();
 
     public bool _drawerOpen = true;
-    public bool _themeManagerOpen = false;
 
     void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
-    }
-
-    void OpenThemeManager(bool value)
-    {
-        _themeManagerOpen = value;
-    }
-
-    void UpdateTheme(ThemeManagerTheme value)
-    {
-        _themeManager = value;
-        StateHasChanged();
     }
 
     protected override void OnInitialized()
@@ -99,7 +77,7 @@
     }
 
     private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
-{
+    {
         new BreadcrumbItem("Personal", href: "#"),
         new BreadcrumbItem("Dashboard", href: "#"),
     };

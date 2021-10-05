@@ -1,5 +1,5 @@
 ﻿
-namespace MudBlazor.Template.Models
+namespace MudBlazor.Template.Shared
 {
     public class ChatMessage
     {
