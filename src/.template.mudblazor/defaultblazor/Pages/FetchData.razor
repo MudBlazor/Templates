@@ -5,6 +5,9 @@
 @using MudBlazor.Template.Data
 @inject WeatherForecastService ForecastService
 //#endif
+//#if (IsHosted)
+@using MudBlazor.Template.Shared
+//#endif
 
 <MudText Typo="Typo.h3" GutterBottom="true">Weather forecast</MudText>
 <MudText Class="mb-8">This component demonstrates fetching data from the server.</MudText>

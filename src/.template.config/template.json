@@ -73,13 +73,13 @@
       "type": "computed",
       "value": "(Host == \"Wasm-PWA\" || Host == \"Wasm-PWA-Hosted\")"
     },
+    "IsHosted": {
+      "type": "computed",
+      "value": "(Host == \"Wasm-Hosted\" || Host == \"Wasm-PWA-Hosted\")"
+    },
     "IsServer": {
       "type": "computed",
       "value": "(Host == \"Server\")"
-    },
-    "IsAdminDashboard": {
-      "type": "computed",
-      "value": "(Template == \"AdminDashboard\")"
     },
     "skipRestore": {
       "type": "parameter",
@@ -95,18 +95,21 @@
   ],
   "sources": [
     {
-      "condition": "(Template == 'Default')",
-      "source": "./.template.mudblazor/defaultblazor",
-      "target": "./"
-    },
-    {
-      "condition": "(Template == 'AdminDashboard')",
-      "source": "./.template.mudblazor/admindashboard",
-      "target": "./"
-    },
-    {
       "source": "./.template.base/common",
+      "include": "*.sln",
       "target": "./"
+    },
+    {
+      "condition": "(!IsHosted)",
+      "source": "./.template.base/common",
+      "exclude": "*.sln",
+      "target": "./"
+    },
+    {
+      "condition": "(IsHosted)",
+      "source": "./.template.base/common",
+      "exclude": "*.sln",
+      "target": "./Client"
     },
     {
       "condition": "(Host == 'Wasm' || Host == 'Wasm-PWA')",
@@ -119,8 +122,28 @@
       "target": "./"
     },
     {
+      "condition": "(Host == 'Wasm-PWA-Hosted')",
+      "source": "./.template.base/wasm-pwa",
+      "target": "./Client"
+    },
+    {
+      "condition": "(IsHosted)",
+      "source": "./.template.base/wasm-hosted",
+      "target": "./"
+    },
+    {
       "condition": "(Host == 'Server')",
       "source": "./.template.base/server",
+      "target": "./"
+    },
+    {
+      "condition": "(Template == 'Default')",
+      "source": "./.template.mudblazor/defaultblazor",
+      "target": "./"
+    },
+    {
+      "condition": "(Template == 'AdminDashboard')",
+      "source": "./.template.mudblazor/admindashboard",
       "target": "./"
     }
   ],
