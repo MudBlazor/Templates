@@ -2,6 +2,22 @@
 version: 2
 updates:
   - package-ecosystem: "nuget"
-    directory: "/"
+    directory: "/src/.template.base/server/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "/src/.template.base/wasm/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "/src/.template.base/wasm-hosted/client"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "/src/.template.base/wasm-hosted/server"
+    schedule:
+      interval: "daily"
+   - package-ecosystem: "nuget"
+    directory: "/src/.template.base/wasm-hosted/shared"
     schedule:
       interval: "daily"
