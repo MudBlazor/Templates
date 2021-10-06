@@ -1,7 +1,0 @@
-{
-  "name": "MudBlazor.Templates",
-  "dependencies": {
-    "Base.Server": "file:/src/.template.base/server/",
-    "Base.Wasm": "file:/src/.template.base/wasm/",
-  }
-}
