@@ -1,6 +1,10 @@
 ﻿using MudBlazor;
 
+//#if (IsHosted)
+namespace MudBlazor.Template.Client.Shared
+//#else
 namespace MudBlazor.Template.Shared
+//#endif
 {
     public class MudBlazorAdminDashboard : MudTheme
     {
