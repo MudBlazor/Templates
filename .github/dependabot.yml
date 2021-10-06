@@ -2,6 +2,6 @@
 version: 2
 updates:
   - package-ecosystem: "nuget"
-    directory: "/src/.template.base/"
+    directory: "/"
     schedule:
       interval: "daily"
