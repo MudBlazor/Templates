@@ -19,6 +19,14 @@
     "language": "C#",
     "type": "project"
   },
+  "guids": [
+    "19EBC26A-B813-4436-895F-2A0B1D9B70B6",
+    "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC",
+    "022358CD-4D45-4514-8CEF-362FE9227DAF",
+    "19DEB080-29A4-42D8-A30B-0E5E2AC599D2",
+    "8F4AA0F4-6E50-45CD-8501-6489B59260B8",
+    "557A6101-669B-407C-959E-0063FF85C0D2"
+  ],
   "sourceName": "MudBlazor.Template",
   "preferNameDirectory": false,
   "symbols": {
@@ -67,7 +75,7 @@
     },
     "IsWasm": {
       "type": "computed",
-      "value": "(Host == \"Wasm\" || Host == \"Wasm-Hosted\" || Host == \"Wasm-PWA\" || Host == \"Wasm-PWA-Hosted\")"
+      "value": "(Host == \"Wasm\" || Host == \"Wasm-PWA\")"
     },
     "IsPwa": {
       "type": "computed",

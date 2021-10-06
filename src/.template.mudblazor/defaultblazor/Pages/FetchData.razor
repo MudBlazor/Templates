@@ -1,11 +1,11 @@
 ﻿@page "/fetchdata"
-//#if (IsWasm)
+//#if (IsWasm || IsHosted)
 @inject HttpClient Http
 //#elseif (IsServer)
 @using MudBlazor.Template.Data
 @inject WeatherForecastService ForecastService
 //#endif
-//#if (IsHosted)
+//#if (IsWasm || IsHosted)
 @using MudBlazor.Template.Shared
 //#endif
 
@@ -44,6 +44,8 @@ else
     {
     //#if (IsServer)
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    //#elseif (IsHosted)
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
     //#elseif (IsWasm)
         forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
     //#endif
