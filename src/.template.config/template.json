@@ -142,12 +142,12 @@
       "target": "./"
     },
     {
-      "condition": "(Template == 'AdminDashboard' && IsHosted)",
+      "condition": "(Template == 'AdminDashboard' && !IsHosted)",
       "source": "./.template.mudblazor/admindashboard",
       "target": "./"
     },
     {
-      "condition": "(Template == 'Default' && !IsHosted)",
+      "condition": "(Template == 'Default' && IsHosted)",
       "source": "./.template.mudblazor/defaultblazor",
       "target": "./Client"
     },
