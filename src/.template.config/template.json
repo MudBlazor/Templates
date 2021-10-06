@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "MudBlazor Team",
+  "classifications": [
+    "Blazor",
+    "Desktop",
+    "macOS",
+    "Windows",
+    "Cloud",
+    "Web"
+  ],
+  "name": "MudBlazor Templates",
+  "description": "Blazor Templates pre configured with MudBlazor.",
+  "identity": "MudBlazor.Templates",
+  "groupIdentity": "MudBlazor.Templates",
+  "shortName": "mudblazor",
+  "defaultName": "MudBlazorTemplates",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "guids": [
+    "19EBC26A-B813-4436-895F-2A0B1D9B70B6",
+    "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC",
+    "022358CD-4D45-4514-8CEF-362FE9227DAF",
+    "19DEB080-29A4-42D8-A30B-0E5E2AC599D2",
+    "8F4AA0F4-6E50-45CD-8501-6489B59260B8",
+    "557A6101-669B-407C-959E-0063FF85C0D2"
+  ],
+  "sourceName": "MudBlazor.Template",
+  "preferNameDirectory": false,
+  "symbols": {
+    "Host": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "Wasm",
+      "choices": [
+        {
+          "choice": "Wasm",
+          "description": "Blazor WebAssembly"
+        },
+        {
+          "choice": "Wasm-Hosted",
+          "description": "Blazor WebAssembly - ASP.NET Core Hosted"
+        },
+        {
+          "choice": "Wasm-PWA",
+          "description": "Blazor WebAssembly - Progressive Web Application"
+        },
+        {
+          "choice": "Wasm-PWA-Hosted",
+          "description": "Blazor WebAssembly - Hosted & PWA"
+        },
+        {
+          "choice": "Server",
+          "description": "Blazor Server-Side"
+        }
+      ]
+    },
+    "Template": {
+      "type": "parameter",
+      "dataType": "choice",
+      "description": "Template you want to use as base for your project.",
+      "defaultValue": "Default",
+      "choices": [
+        {
+          "choice": "Default",
+          "description": "Default Blazor Template with MudBlazor."
+        },
+        {
+          "choice": "AdminDashboard",
+          "description": "Admin Dashboard Template with MudBlazor."
+        }
+      ]
+    },
+    "IsWasm": {
+      "type": "computed",
+      "value": "(Host == \"Wasm\" || Host == \"Wasm-PWA\")"
+    },
+    "IsPwa": {
+      "type": "computed",
+      "value": "(Host == \"Wasm-PWA\" || Host == \"Wasm-PWA-Hosted\")"
+    },
+    "IsHosted": {
+      "type": "computed",
+      "value": "(Host == \"Wasm-Hosted\" || Host == \"Wasm-PWA-Hosted\")"
+    },
+    "IsServer": {
+      "type": "computed",
+      "value": "(Host == \"Server\")"
+    },
+    "skipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, skips the automatic restore of the project on create.",
+      "defaultValue": "false"
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "./"
+    }
+  ],
+  "sources": [
+    {
+      "source": "./.template.base/common",
+      "include": "*.sln",
+      "target": "./"
+    },
+    {
+      "condition": "(!IsHosted)",
+      "source": "./.template.base/common",
+      "exclude": "*.sln",
+      "target": "./"
+    },
+    {
+      "condition": "(IsHosted)",
+      "source": "./.template.base/common",
+      "exclude": "*.sln",
+      "target": "./Client"
+    },
+    {
+      "condition": "(Host == 'Wasm' || Host == 'Wasm-PWA')",
+      "source": "./.template.base/wasm",
+      "target": "./"
+    },
+    {
+      "condition": "(Host == 'Wasm-PWA')",
+      "source": "./.template.base/wasm-pwa",
+      "target": "./"
+    },
+    {
+      "condition": "(Host == 'Wasm-PWA-Hosted')",
+      "source": "./.template.base/wasm-pwa",
+      "target": "./Client"
+    },
+    {
+      "condition": "(IsHosted)",
+      "source": "./.template.base/wasm-hosted",
+      "target": "./"
+    },
+    {
+      "condition": "(Host == 'Server')",
+      "source": "./.template.base/server",
+      "target": "./"
+    },
+    {
+      "condition": "(Template == 'Default' && !IsHosted)",
+      "source": "./.template.mudblazor/defaultblazor",
+      "target": "./"
+    },
+    {
+      "condition": "(Template == 'AdminDashboard' && !IsHosted)",
+      "source": "./.template.mudblazor/admindashboard",
+      "target": "./"
+    },
+    {
+      "condition": "(Template == 'Default' && IsHosted)",
+      "source": "./.template.mudblazor/defaultblazor",
+      "target": "./Client"
+    },
+    {
+      "condition": "(Template == 'AdminDashboard' && IsHosted)",
+      "source": "./.template.mudblazor/admindashboard",
+      "target": "./Client"
+    }
+  ],
+  "SpecialCustomOperations": {
+    "**/*.razor": {
+      "operations": [
+        {
+          "type": "conditional",
+          "configuration": {
+            "if": [
+              "//#if"
+            ],
+            "else": [
+              "//#else"
+            ],
+            "elseif": [
+              "//#elseif"
+            ],
+            "endif": [
+              "//#endif"
+            ],
+            "trim": true,
+            "wholeLine": true,
+            "evaluator": "C++"
+          }
+        }
+      ]
+    },
+    "**/*.html": {
+      "operations": [
+        {
+          "type": "conditional",
+          "configuration": {
+            "if": [
+              "//#if"
+            ],
+            "else": [
+              "//#else"
+            ],
+            "elseif": [
+              "//#elseif"
+            ],
+            "endif": [
+              "//#endif"
+            ],
+            "trim": true,
+            "wholeLine": true,
+            "evaluator": "C++"
+          }
+        }
+      ]
+    }
+  },
+  "postActions": [
+    {
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿//#if (IsWasm || IsHosted)
+@using System.Net.Http
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.Components.WebAssembly.Http
+@using Microsoft.JSInterop
+//#endif
+//#if (IsServer)
+@using System.Net.Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+//#endif
+@using MudBlazor
+//#if (IsHosted)
+@using MudBlazor.Template.Client
+@using MudBlazor.Template.Client.Shared
+//#else
+@using MudBlazor.Template
+@using MudBlazor.Template.Shared
+//#endif

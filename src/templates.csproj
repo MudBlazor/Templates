@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+	<Version>0.1.6</Version>
+	<PackageIcon>Nuget.png</PackageIcon>
+	<PackageType>Template</PackageType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+	<PackageId>MudBlazor.Templates</PackageId>
+	<PackageTags>Blazor, MudBlazor, Templates, Layout, Components, UI, Dashboard, Admin Dashboard</PackageTags>
+    
+    <Company>MudBlazor</Company>
+    <Authors>MudBlazor Team</Authors>
+    <Copyright>Copyright 2020-2021 Jonny Larsson</Copyright>
+	<Title>MudBlazor Templates</Title>
+    <Description>Blazor templates pre configured with MudBlazor.</Description>
+    <PackageProjectUrl>http://mudblazor.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MudBlazor/Templates</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+	  
+	<IncludeContentInPack>true</IncludeContentInPack>
+	<IncludeBuildOutput>false</IncludeBuildOutput>
+	<ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="true" Visible="false" PackagePath="" />
+    <None Include="..\content\Nuget.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Content Include="**\.template.base\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+    <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+    <Content Include="**\.template.mudblazor\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+</Project>
