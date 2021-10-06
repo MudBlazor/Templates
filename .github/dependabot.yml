@@ -17,7 +17,7 @@ updates:
     directory: "/src/.template.base/wasm-hosted/server"
     schedule:
       interval: "daily"
-   - package-ecosystem: "nuget"
+  - package-ecosystem: "nuget"
     directory: "/src/.template.base/wasm-hosted/shared"
     schedule:
       interval: "daily"
