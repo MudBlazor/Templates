@@ -1,4 +1,4 @@
-name: mudblazor-ci
+name: mudblazor-auto-approve
 
 on: [pull_request]
 
