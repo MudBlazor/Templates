@@ -9,8 +9,8 @@
 
 ## Prerequisites
 
-- .NET 5 / .NET 6
-- Visual Studio 2019/2022 with the ASP.NET and Web development.
+- .NET 6
+- Visual Studio 2022, JetBrains Rider or VsCode 
 
 ## Getting Started
 ### Installation
