@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MudBlazor.Template.Shared
+﻿namespace MudBlazor.Template.Shared
 {
     public class WeatherForecast
     {
@@ -10,7 +6,7 @@ namespace MudBlazor.Template.Shared
 
         public int TemperatureC { get; set; }
 
-        public string Summary { get; set; }
+        public string? Summary { get; set; }
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
