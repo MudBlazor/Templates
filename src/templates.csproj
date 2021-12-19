@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup>
-	<Version>0.1.6</Version>
+	<Version>0.6.0</Version>
 	<PackageIcon>Nuget.png</PackageIcon>
 	<PackageType>Template</PackageType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -14,7 +14,7 @@
     
     <Company>MudBlazor</Company>
     <Authors>MudBlazor Team</Authors>
-    <Copyright>Copyright 2020-2021 Jonny Larsson</Copyright>
+    <Copyright>Copyright (c) 2021 MudBlazor</Copyright>
 	<Title>MudBlazor Templates</Title>
     <Description>Blazor templates pre configured with MudBlazor.</Description>
     <PackageProjectUrl>http://mudblazor.com/</PackageProjectUrl>
