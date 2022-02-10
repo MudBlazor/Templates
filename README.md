@@ -1,5 +1,5 @@
 # ![MudBlazor](content/MudBlazor-GitHub-NoBg.png)
-# Blazor Templates pre configured with MudBlazor.
+# Blazor Template pre configured with MudBlazor.
 
 [![GitHub](https://img.shields.io/github/license/garderoben/mudblazor?color=%23594ae2&style=flat-square)](https://github.com/Garderoben/MudBlazor.Templates/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/786656789310865418?color=%237289da&label=Discord&logo=discord&logoColor=%237289da&style=flat-square)](https://discord.gg/mudblazor)
@@ -26,7 +26,6 @@ Specific template options:
 | Options                 | Description                                           | Type                                                                         | Default   |
 |-------------------------|-------------------------------------------------------|------------------------------------------------------------------------------|-----------|
 | `-ho` \| `--host`       | Project Type                                          | `wasm` \| `wasm-hosted`<br> `wasm-pwa` \| `wasm-pwa-hosted`<br> `server`<br> | `wasm`    |
-| `-t` \| `--template`    | MudBlazor Template Variant                            | `default` \| `admindashboard`                                                | `default` |
 | `-s` \| `--skipRestore` | Skips the automatic restore of the project on create. | `bool`                                                                       | `false`   |
 
 For none MudBlazor specific options run:
@@ -38,8 +37,5 @@ dotnet new -h
 The templates can be used in Visual Studio as well and should show up in the list when creating a new project.
 ![VisualStudioTemplate](content/visual-studio-template.png)
 
-## Template - Default Blazor
+## Default Blazor - Template
 ![DefaultBlazorTemplate](content/DefaultBlazorTemplate.png)
-
-## Template - Admin Dashboard
-![AdminDashboardTemplate](content/AdminDashboardTemplate.png)
