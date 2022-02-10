@@ -26,7 +26,6 @@ Specific template options:
 | Options                 | Description                                           | Type                                                                         | Default   |
 |-------------------------|-------------------------------------------------------|------------------------------------------------------------------------------|-----------|
 | `-ho` \| `--host`       | Project Type                                          | `wasm` \| `wasm-hosted`<br> `wasm-pwa` \| `wasm-pwa-hosted`<br> `server`<br> | `wasm`    |
-| `-t` \| `--template`    | MudBlazor Template Variant                            | `default` \| `admindashboard`                                                | `default` |
 | `-s` \| `--skipRestore` | Skips the automatic restore of the project on create. | `bool`                                                                       | `false`   |
 
 For none MudBlazor specific options run:
@@ -38,8 +37,5 @@ dotnet new -h
 The templates can be used in Visual Studio as well and should show up in the list when creating a new project.
 ![VisualStudioTemplate](content/visual-studio-template.png)
 
-## Template - Default Blazor
+## Default Blazor - Template
 ![DefaultBlazorTemplate](content/DefaultBlazorTemplate.png)
-
-## Template - Admin Dashboard
-![AdminDashboardTemplate](content/AdminDashboardTemplate.png)
