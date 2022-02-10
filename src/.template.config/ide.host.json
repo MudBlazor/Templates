@@ -10,14 +10,6 @@
         "text": "Project Type"
       },
       "isVisible": true      
-    },
-    {       
-      "id": "Template",
-      "name": 
-      {
-        "text": "MudBlazor template variant"
-      },
-      "isVisible": true      
     }
   ]
 }

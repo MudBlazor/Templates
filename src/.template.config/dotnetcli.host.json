@@ -4,10 +4,6 @@
     {
         "Host": {
             "longName": "host"
-        },
-        "Template": {
-            "longName": "template",
-            "shortName": "t"
         }
     }
 }

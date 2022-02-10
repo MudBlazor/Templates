@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
-	<Version>0.6.0</Version>
+	<Version>0.6.1</Version>
 	<PackageIcon>Nuget.png</PackageIcon>
 	<PackageType>Template</PackageType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<PackageId>MudBlazor.Templates</PackageId>
-	<PackageTags>Blazor, MudBlazor, Templates, Layout, Components, UI, Dashboard, Admin Dashboard</PackageTags>
+	<PackageTags>Blazor, MudBlazor, Templates, Layout, Components, UI</PackageTags>
     
     <Company>MudBlazor</Company>
     <Authors>MudBlazor Team</Authors>

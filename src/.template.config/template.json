@@ -57,22 +57,6 @@
         }
       ]
     },
-    "Template": {
-      "type": "parameter",
-      "dataType": "choice",
-      "description": "Template you want to use as base for your project.",
-      "defaultValue": "Default",
-      "choices": [
-        {
-          "choice": "Default",
-          "description": "Default Blazor Template with MudBlazor."
-        },
-        {
-          "choice": "AdminDashboard",
-          "description": "Admin Dashboard Template with MudBlazor."
-        }
-      ]
-    },
     "IsWasm": {
       "type": "computed",
       "value": "(Host == \"Wasm\" || Host == \"Wasm-PWA\")"
@@ -145,23 +129,13 @@
       "target": "./"
     },
     {
-      "condition": "(Template == 'Default' && !IsHosted)",
+      "condition": "(!IsHosted)",
       "source": "./.template.mudblazor/defaultblazor",
       "target": "./"
     },
     {
-      "condition": "(Template == 'AdminDashboard' && !IsHosted)",
-      "source": "./.template.mudblazor/admindashboard",
-      "target": "./"
-    },
-    {
-      "condition": "(Template == 'Default' && IsHosted)",
+      "condition": "(IsHosted)",
       "source": "./.template.mudblazor/defaultblazor",
-      "target": "./Client"
-    },
-    {
-      "condition": "(Template == 'AdminDashboard' && IsHosted)",
-      "source": "./.template.mudblazor/admindashboard",
       "target": "./Client"
     }
   ],
