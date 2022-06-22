@@ -9,7 +9,7 @@
 	<PackageIcon>Nuget.png</PackageIcon>
 	<PackageType>Template</PackageType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-	<PackageId>MudBlazor.Templates</PackageId>
+	<PackageId>MudBlazor.Templates.Test</PackageId>
 	<PackageTags>Blazor, MudBlazor, Templates, Layout, Components, UI</PackageTags>
     
     <Company>MudBlazor</Company>
@@ -36,6 +36,10 @@
     <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
     <Content Include="**\.template.mudblazor\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
     <Compile Remove="**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include=".template.base\maui\" />
   </ItemGroup>
 
 </Project>
