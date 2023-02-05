@@ -15,7 +15,7 @@
 ## Getting Started
 ### Installation
 ```
-dotnet new --install MudBlazor.Templates
+dotnet new install MudBlazor.Templates
 ```
 ### Usage
 ```
