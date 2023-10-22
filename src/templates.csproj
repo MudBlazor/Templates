@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-	<Version>0.6.3</Version>
+	<Version>0.6.4</Version>
 	<PackageIcon>Nuget.png</PackageIcon>
 	<PackageType>Template</PackageType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -36,6 +36,11 @@
     <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
     <Content Include="**\.template.mudblazor\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
     <Compile Remove="**\*" />
+  </ItemGroup>
+  
+    <ItemGroup>
+    <GeneratedContent Include="BlazorWeb-CSharp.csproj.in" OutputPath="MudBlazorWebTemplate/BlazorWeb-CSharp/BlazorWeb-CSharp/BlazorWeb-CSharp.csproj" />
+    <GeneratedContent Include="BlazorWeb-CSharp.Client.csproj.in" OutputPath="MudBlazorWebTemplate/BlazorWeb-CSharp/BlazorWeb-CSharp.Client/BlazorWeb-CSharp.Client.csproj" />
   </ItemGroup>
 
 </Project>
