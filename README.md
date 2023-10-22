@@ -45,19 +45,19 @@ install the latest MudBlazor.Templates from NuGet to get the template.
 ### Interactive per Page:
 
 ``` 
-dotnet new MudBlazorWebApp -int (Auto|Server|WebAssembly)
+dotnet new mudblazorwebapp -int (Auto|Server|WebAssembly)
 ```
 
 ### Interactive Global:
 
 ```
-dotnet new MudBlazorWebApp -int (Auto|Server|WebAssembly) -ai
+dotnet new mudblazorwebapp -int (Auto|Server|WebAssembly) -ai
 ```
 
 ### Add Authentication:
 
 ```
-dotnet new MudBlazorWebApp -int Auto -au Individual
+dotnet new mudblazorwebapp -int Auto -au Individual
 ```
 
 ## ToDo for the .NET 8 Template:
