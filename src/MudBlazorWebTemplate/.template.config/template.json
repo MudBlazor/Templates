@@ -4,10 +4,11 @@
   "classifications": [
     "Web",
     "Blazor",
-    "WebAssembly"
+    "WebAssembly",
+	"MudBlazor"
   ],
   "name": "MudBlazor Web App",
-  "defaultName": "MudBlazorApp",
+  "defaultName": "MudBlazorWebApp",
   "description": "A project template for creating a MudBlazor web app that supports both server-side rendering and client interactivity. This template can be used for web apps with rich dynamic user interfaces (UIs).",
   "groupIdentity": "MudBlazor.Web.Blazor",
   "guids": [
@@ -48,12 +49,26 @@
       "source": "./",
       "target": "./",
       "exclude": [
-        ".template.config/**"
+        ".template.config/**",
+		"createAllTemplatesForTests.bat"
       ],
       "copyOnly": [
         "**/wwwroot/bootstrap/**"
       ],
       "modifiers": [
+        {
+          "condition": "(UseWebAssembly)",
+          "rename": {
+            "BlazorWeb-CSharp/Components/MyMudProviders.razor": "BlazorWeb-CSharp.Client/Components/MyMudProviders.razor",
+			"BlazorWeb-CSharp/Components/MyMudThemeProvider.razor": "BlazorWeb-CSharp.Client/Components/MyMudThemeProvider.razor"
+          }
+        },
+		{
+          "condition": "(!IndividualLocalAuth)",
+          "exclude": [
+            "**/wwwroot/bootstrap/**"
+          ]
+        },
         {
           "condition": "(!UseWebAssembly)",
           "exclude": [
@@ -62,6 +77,23 @@
           ],
           "rename": {
             "BlazorWeb-CSharp/": "./"
+          }
+        },
+        {
+          "condition": "(InteractiveAtRoot)",
+          "exclude": [
+            "BlazorWeb-CSharp/Components/Layout/MainLayout_PerPage.razor",
+			"BlazorWeb-CSharp/Components/Layout/MainLayout_PerPage.razor.css"
+          ]
+        },
+        {
+          "condition": "(!InteractiveAtRoot)",
+          "exclude": [
+            "BlazorWeb-CSharp/Components/Layout/MainLayout.razor"
+          ],
+          "rename": {
+            "MainLayout_PerPage.razor": "MainLayout.razor",
+			"MainLayout_PerPage.razor.css": "MainLayout.razor.css"
           }
         },
         {

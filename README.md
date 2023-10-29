@@ -35,36 +35,35 @@ dotnet new -h
 
 # New Web App Template for .NET 8
 
-MudBlazor Web App template copied from Microsoft Web App template and modified to use MudBlazor components.
-Requires .NET 8 latest SDK to be installed.
-Requires latest Visual Studio 2022 Preview to be seen in the list of templates.
-install the latest MudBlazor.Templates from NuGet to get the template.
+We're excited to announce the availability of a new template for .NET 8 Web Apps: the MudBlazor Web App template. This template is based on the Microsoft Web App template, but has been modified to include MudBlazor components.
 
-## Tested Modes for new .NET 8 Web App Template
+To get started with this template, please ensure that you have the following installed:
 
-### Interactive per Page:
+1. The latest .NET 8 SDK
+2. The latest Visual Studio 2022 Preview (to view the template in the list of available templates)
+3. The most recent version of MudBlazor.Templates from NuGet (to access the template)
 
-``` 
-dotnet new mudblazorwebapp -int (Auto|Server|WebAssembly)
+## How to Use the New .NET 8 Web App Template
+
+### Interactive per Page
+```
+dotnet new mudblazorwebapp --interactivity (Auto|Server|WebAssembly)
 ```
 
-### Interactive Global:
-
+### Interactive Global
 ```
-dotnet new mudblazorwebapp -int (Auto|Server|WebAssembly) -ai
-```
-
-### Add Authentication:
-
-```
-dotnet new mudblazorwebapp -int Auto -au Individual
+dotnet new mudblazorwebapp --interactivity (Auto|Server|WebAssembly) --all-interactive
 ```
 
-## ToDo for the .NET 8 Template:
-* Authentication not yet using MudBlazor components, need to be updated.
-* Add more meaningful demo pages with actual fetching of data from server.
-* Add more documentation on how to use the template.
-* Currently Authentication is only working without the -ai option, need to fix that.
+### Adding Authentication
+```
+dotnet new mudblazorwebapp --interactivity Auto --auth Individual
+dotnet new mudblazorwebapp --interactivity Auto --auth Individual --all-interactive
+```
+
+## To Do for the .NET 8 Template
+
+- Integrate MudBlazor components into the authentication system (currently using Bootstrap components from the original template)
 
 ### Visual Studio Templates
 The templates can be used in Visual Studio as well and should show up in the list when creating a new project.

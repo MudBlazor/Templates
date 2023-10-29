@@ -2,11 +2,12 @@
 @*#if (!InteractiveAtRoot) -->
 @rendermode InteractiveServer
 ##endif*@
+@*#if (UseWebAssembly) -->
+@using BlazorWeb_CSharp.Client.Components
+##endif*@
 
 @*#if (!InteractiveAtRoot) -->
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
+<MyMudProviders />
 ##endif*@
 
 <PageTitle>Weather</PageTitle>

@@ -1,9 +1,14 @@
 ﻿@inherits LayoutComponentBase
+@*#if (UseWebAssembly && InteractiveAtRoot) -->
+@using BlazorWeb_CSharp.Client.Components
+##endif*@
+@*#if (!UseWebAssembly && InteractiveAtRoot) -->
+@using BlazorWeb_CSharp.Components
+##endif*@
 
 @*#if (InteractiveAtRoot) -->
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
+<MyMudThemeProvider />
+<MyMudProviders />
 ##endif*@
 
 <MudLayout>

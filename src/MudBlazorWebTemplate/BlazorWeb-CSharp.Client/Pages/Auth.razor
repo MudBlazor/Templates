@@ -7,12 +7,11 @@
 @rendermode InteractiveAuto
 ##elseif (!InteractiveAtRoot)
 @rendermode InteractiveWebAssembly
+@using BlazorWeb_CSharp.Client.Components
 ##endif*@
 
 @*#if (!InteractiveAtRoot) -->
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
+<MyMudProviders />
 ##endif*@
 
 <PageTitle>Auth</PageTitle>

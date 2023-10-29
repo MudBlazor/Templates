@@ -6,12 +6,6 @@
 ##endif*@
 @inject NavigationManager NavigationManager
 
-@*#if (!InteractiveAtRoot) -->
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
-##endif*@
-
 @if (HttpContext is null)
 {
     <p>Loading...</p>
