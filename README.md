@@ -1,5 +1,5 @@
 # ![MudBlazor](content/MudBlazor-GitHub-NoBg.png)
-# Blazor Template pre configured with MudBlazor.
+# Blazor Template pre-configured with MudBlazor.
 
 [![GitHub](https://img.shields.io/github/license/garderoben/mudblazor?color=%23594ae2&style=flat-square)](https://github.com/Garderoben/MudBlazor.Templates/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/786656789310865418?color=%237289da&label=Discord&logo=discord&logoColor=%237289da&style=flat-square)](https://discord.gg/mudblazor)
@@ -10,7 +10,7 @@
 ## Prerequisites
 
 - .NET 6
-- Visual Studio 2022, JetBrains Rider or VsCode 
+- Visual Studio 2022, JetBrains Rider or Visual Studio Code 
 
 ## Getting Started
 ### Installation
@@ -22,13 +22,13 @@ dotnet new install MudBlazor.Templates
 dotnet new mudblazor --host wasm --name MyApplication
 ```
 ### Template Options
-Specific template options:
-| Options                 | Description                                           | Type                                                                         | Default   |
-|-------------------------|-------------------------------------------------------|------------------------------------------------------------------------------|-----------|
-| `-ho` \| `--host`       | Project Type                                          | `wasm` \| `wasm-hosted`<br> `wasm-pwa` \| `wasm-pwa-hosted`<br> `server`<br> | `wasm`    |
-| `-s` \| `--skipRestore` | Skips the automatic restore of the project on create. | `bool`                                                                       | `false`   |
+Template-specific options:
+| Options                 | Description                                                | Type                                                                         | Default   |
+|-------------------------|------------------------------------------------------------|------------------------------------------------------------------------------|-----------|
+| `-ho` \| `--host`       | Project Type                                               | `wasm` \| `wasm-hosted`<br> `wasm-pwa` \| `wasm-pwa-hosted`<br> `server`<br> | `wasm`    |
+| `-s` \| `--skipRestore` | Skips the automatic restore of the project after creation. | `bool`                                                                       | `false`   |
 
-For none MudBlazor specific options run:
+To see a list of all other options not specific to MudBlazor, run:
 ```
 dotnet new -h
 ```
@@ -66,8 +66,8 @@ dotnet new mudblazorwebapp --interactivity Auto --auth Individual --all-interact
 - Integrate MudBlazor components into the authentication system (currently using Bootstrap components from the original template)
 
 ### Visual Studio Templates
-The templates can be used in Visual Studio as well and should show up in the list when creating a new project.
+The templates can also be used in Visual Studio and should show up in the list when creating a new project.
 ![VisualStudioTemplate](content/visual-studio-template.png)
 
-## Default Blazor - Template
+## Default Blazor Template
 ![DefaultBlazorTemplate](content/DefaultBlazorTemplate.png)
