@@ -10,6 +10,12 @@
         "text": "Project Type"
       },
       "isVisible": true      
+    },
+    {
+      "id": "UseProgramMain",
+      "isVisible": true,
+      "persistenceScope": "shared",
+      "persistenceScopeName": "Microsoft"
     }
   ]
 }

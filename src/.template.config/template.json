@@ -78,6 +78,13 @@
       "datatype": "bool",
       "description": "If specified, skips the automatic restore of the project on create.",
       "defaultValue": "false"
+    },
+    "UseProgramMain": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "displayName": "Do not use _top-level statements",
+      "description": "Whether to generate an explicit Program class and Main method instead of top-level statements."
     }
   },
   "primaryOutputs": [
@@ -95,7 +102,18 @@
       "condition": "(!IsHosted)",
       "source": "./.template.base/common",
       "exclude": "*.sln",
-      "target": "./"
+      "target": "./",
+      "modifiers": [
+        {
+          "condition": "(!UseProgramMain)",
+          "exclude": [ "Program.Main.cs" ]
+    },
+    {
+          "condition": "(UseProgramMain)",
+          "exclude": [ "Program.cs" ],
+          "rename": { "Program.Main.cs": "Program.cs" }
+        }
+      ]
     },
     {
       "condition": "(IsHosted)",
@@ -106,7 +124,18 @@
     {
       "condition": "(Host == 'Wasm' || Host == 'Wasm-PWA')",
       "source": "./.template.base/wasm",
-      "target": "./"
+      "target": "./",
+      "modifiers": [
+        {
+          "condition": "(!UseProgramMain)",
+          "exclude": [ "Program.Main.cs" ]
+    },
+    {
+          "condition": "(UseProgramMain)",
+          "exclude": [ "Program.cs" ],
+          "rename": { "Program.Main.cs": "Program.cs" }
+        }
+      ]
     },
     {
       "condition": "(Host == 'Wasm-PWA')",
@@ -121,12 +150,34 @@
     {
       "condition": "(IsHosted)",
       "source": "./.template.base/wasm-hosted",
-      "target": "./"
+      "target": "./",
+      "modifiers": [
+        {
+          "condition": "(!UseProgramMain)",
+          "exclude": [ "Program.Main.cs" ]
+        },
+        {
+          "condition": "(UseProgramMain)",
+          "exclude": [ "Program.cs" ],
+          "rename": { "Program.Main.cs": "Program.cs" }
+        }
+      ]
     },
     {
       "condition": "(Host == 'Server')",
       "source": "./.template.base/server",
-      "target": "./"
+      "target": "./",
+      "modifiers": [
+        {
+          "condition": "(!UseProgramMain)",
+          "exclude": [ "Program.Main.cs" ]
+        },
+        {
+          "condition": "(UseProgramMain)",
+          "exclude": [ "Program.cs" ],
+          "rename": { "Program.Main.cs": "Program.cs" }
+        }
+      ]
     },
     {
       "condition": "(!IsHosted)",

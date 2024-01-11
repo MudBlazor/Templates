@@ -4,6 +4,10 @@
     {
         "Host": {
             "longName": "host"
+        },
+        "UseProgramMain": {
+            "longName": "use-program-main",
+            "shortName": ""
         }
     }
 }
