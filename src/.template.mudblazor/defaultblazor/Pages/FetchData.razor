@@ -1,7 +1,7 @@
 ﻿@page "/fetchdata"
 //#if (IsWasm || IsHosted)
 @inject HttpClient Http
-//#elseif (IsServer)
+//#elseif (IsServer || IsMaui)
 @using MudBlazor.Template.Data
 @inject WeatherForecastService ForecastService
 //#endif
@@ -44,7 +44,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-    //#if (IsServer)
+    //#if (IsServer || IsMaui)
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     //#elseif (IsHosted)
         forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
