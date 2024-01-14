@@ -7,12 +7,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 #endif
 #if (UseWebAssembly && SampleContent)
-using BlazorWeb_CSharp.Client.Pages;
+using MudBlazor.Template.Client.Pages;
 #endif
-using BlazorWeb_CSharp.Components;
+using MudBlazor.Template.Components;
 #if (IndividualLocalAuth)
-using BlazorWeb_CSharp.Components.Account;
-using BlazorWeb_CSharp.Data;
+using MudBlazor.Template.Components.Account;
+using MudBlazor.Template.Data;
 #endif
 using MudBlazor.Services;
 
@@ -124,7 +124,7 @@ app.MapRazorComponents<App>();
 #if (UseWebAssembly && SampleContent)
     .AddAdditionalAssemblies(typeof(Counter).Assembly);
 #elif (UseWebAssembly)
-    .AddAdditionalAssemblies(typeof(BlazorWeb_CSharp.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(MudBlazor.Template.Client._Imports).Assembly);
 #endif
 
 #if (IndividualLocalAuth)

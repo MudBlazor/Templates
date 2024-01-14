@@ -7,16 +7,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 #endif
 #if (UseWebAssembly && SampleContent)
-using BlazorWeb_CSharp.Client.Pages;
+using MudBlazor.Template.Client.Pages;
 #endif
-using BlazorWeb_CSharp.Components;
+using MudBlazor.Template.Components;
 #if (IndividualLocalAuth)
-using BlazorWeb_CSharp.Components.Account;
-using BlazorWeb_CSharp.Data;
+using MudBlazor.Template.Components.Account;
+using MudBlazor.Template.Data;
 #endif
 using MudBlazor.Services;
 
-namespace BlazorWeb_CSharp;
+namespace MudBlazor.Template;
 
 public class Program
 {

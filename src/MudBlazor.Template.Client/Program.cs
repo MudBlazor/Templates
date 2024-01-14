@@ -1,5 +1,5 @@
 #if (IndividualLocalAuth)
-using BlazorWeb_CSharp.Client;
+using MudBlazor.Template.Client;
 using Microsoft.AspNetCore.Components.Authorization;
 #endif
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

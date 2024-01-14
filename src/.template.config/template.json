@@ -50,7 +50,7 @@
       "target": "./",
       "exclude": [
         ".template.config/**",
-        "createAllTemplatesForTests.bat"
+        "CreateAllTemplatesForTests.bat"
       ],
       "copyOnly": [
         "**/wwwroot/bootstrap/**"

@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
-using BlazorWeb_CSharp.Components.Account.Pages;
-using BlazorWeb_CSharp.Components.Account.Pages.Manage;
-using BlazorWeb_CSharp.Data;
+using MudBlazor.Template.Components.Account.Pages;
+using MudBlazor.Template.Components.Account.Pages.Manage;
+using MudBlazor.Template.Data;
 
 namespace Microsoft.AspNetCore.Routing;
 

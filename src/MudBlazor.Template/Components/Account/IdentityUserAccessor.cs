@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
-using BlazorWeb_CSharp.Data;
+using MudBlazor.Template.Data;
 
-namespace BlazorWeb_CSharp.Components.Account;
+namespace MudBlazor.Template.Components.Account;
 
 internal sealed class IdentityUserAccessor(UserManager<ApplicationUser> userManager, IdentityRedirectManager redirectManager)
 {

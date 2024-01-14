@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using BlazorWeb_CSharp.Client;
-using BlazorWeb_CSharp.Data;
+using MudBlazor.Template.Client;
+using MudBlazor.Template.Data;
 
-namespace BlazorWeb_CSharp.Components.Account;
+namespace MudBlazor.Template.Components.Account;
 
 // This is a server-side AuthenticationStateProvider that revalidates the security stamp for the connected user
 // every 30 minutes an interactive circuit is connected. It also uses PersistentComponentState to flow the
