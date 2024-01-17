@@ -1,15 +1,22 @@
-﻿<MudNavMenu>
-    <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
-@*#if (UseServer || UseWebAssembly)
+﻿@*#if (IndividualLocalAuth)
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Routing;
+@inject NavigationManager Navigation
+@implements IDisposable
+##endif*@
+<MudNavMenu>
+	<MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+	@*#if (UseServer || UseWebAssembly)
     <MudNavLink Href="counter" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Add">Counter</MudNavLink>
     <MudNavLink Href="weather" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Weather</MudNavLink>
 ##endif*@
-@*#if (IndividualLocalAuth)
+	@*#if (IndividualLocalAuth)
 	<MudNavLink Href="auth" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Auth Required</MudNavLink>
 
 	<AuthorizeView>
 		<Authorized>
 			<MudNavLink Href="Account/Manage" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">@context.User.Identity?.Name</MudNavLink>
+			<MudNavLink Href="@($"Account/Logout?returnUrl={_currentUrl}")" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Logout" >Logout</MudNavLink>
 		</Authorized>
 		<NotAuthorized>
 			<MudNavLink Href="Account/Register" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Register</MudNavLink>
@@ -19,3 +26,25 @@
 ##endif*@
 
 </MudNavMenu>
+
+@*#if (IndividualLocalAuth)
+@code {
+	private string? _currentUrl;
+	protected override void OnInitialized()
+	{
+		_currentUrl = Navigation.ToBaseRelativePath(Navigation.Uri);
+		Navigation.LocationChanged += OnLocationChanged;
+	}
+
+	private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+	{
+		_currentUrl = Navigation.ToBaseRelativePath(e.Location);
+		StateHasChanged();
+	}
+
+	public void Dispose()
+	{
+		Navigation.LocationChanged -= OnLocationChanged;
+	}
+}
+##endif*@
