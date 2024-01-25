@@ -1,6 +1,6 @@
 $tests = Join-Path $PSScriptRoot '/tests'
 
-Remove-Item -LiteralPath $tests -Force -Recurse
+Remove-Item -LiteralPath $tests -Force -Recurse -ErrorAction SilentlyContinue
 New-Item -Path $tests -ItemType Directory
 
 dotnet new install $(Join-Path $PSScriptRoot '/src/mudblazor') --force 
