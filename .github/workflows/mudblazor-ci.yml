@@ -1,6 +1,9 @@
 name: mudblazor-ci
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
 
 jobs:
   build:
@@ -9,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Setup dotnet
       uses: actions/setup-dotnet@v3
     - name: Install and build all templates
