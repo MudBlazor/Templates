@@ -365,3 +365,6 @@ FodyWeavers.xsd
 /MudBlazor/Properties/ServiceDependencies
 
 .DS_Store
+
+# MudTemplatesTesting
+tests/
