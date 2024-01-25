@@ -1,4 +1,9 @@
-﻿<CascadingValue Value=false Name="UsePopoverProvider">
+﻿@*  MudThemeProvider contains MudPopoverProvider.
+    However we can't have two instances of MudPopoverProvider in a render.
+    In net8.0 to support page and component level interactivity we may need to place
+    MudPopoverProvider directly in an interactive component or page so we remove it here.
+*@
+<CascadingValue Value=false Name="UsePopoverProvider">
     <MudThemeProvider Theme="MyTheme"></MudThemeProvider>
 </CascadingValue>
 
