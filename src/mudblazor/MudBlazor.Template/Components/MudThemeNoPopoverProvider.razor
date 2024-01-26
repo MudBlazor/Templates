@@ -4,11 +4,11 @@
     MudPopoverProvider directly in an interactive component or page so we remove it here.
 *@
 <CascadingValue Value=false Name="UsePopoverProvider">
-    <MudThemeProvider Theme="MyTheme"></MudThemeProvider>
+    <MudThemeProvider Theme="CustomTheme"></MudThemeProvider>
 </CascadingValue>
 
 @code {
-    public static MudTheme MyTheme => new()
+    public static MudTheme CustomTheme => new()
         {
             Palette = new PaletteLight()
             {
