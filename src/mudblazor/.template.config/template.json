@@ -57,13 +57,7 @@
         "**/wwwroot/bootstrap/**"
       ],
       "modifiers": [
-        {
-          "condition": "(UseWebAssembly)",
-          "rename": {
-            "MudBlazor.Template/Components/MudProviders.razor": "MudBlazor.Template.Client/Components/MudProviders.razor",
-            "MudBlazor.Template/Components/MudThemeNoPopoverProvider.razor": "MudBlazor.Template.Client/Components/MudThemeNoPopoverProvider.razor"
-          }
-        },
+
         {
           "condition": "(!IndividualLocalAuth)",
           "exclude": [

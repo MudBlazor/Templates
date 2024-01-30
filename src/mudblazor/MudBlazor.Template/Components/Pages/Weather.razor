@@ -3,11 +3,13 @@
 @rendermode InteractiveServer
 ##endif*@
 @*#if (UseWebAssembly) -->
-@using MudBlazor.Template.Client.Components
+
 ##endif*@
 
 @*#if (!InteractiveAtRoot) -->
-<MudProviders />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 ##endif*@
 
 <PageTitle>Weather</PageTitle>

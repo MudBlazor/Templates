@@ -1,14 +1,16 @@
 ﻿@inherits LayoutComponentBase
 @*#if (UseWebAssembly && InteractiveAtRoot) -->
-@using MudBlazor.Template.Client.Components
+
 ##endif*@
 @*#if (!UseWebAssembly && InteractiveAtRoot) -->
 @using MudBlazor.Template.Components
 ##endif*@
 
 @*#if (InteractiveAtRoot) -->
-<MudThemeNoPopoverProvider />
-<MudProviders />
+<MudThemingProvider />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 ##endif*@
 
 <MudLayout>

@@ -5,9 +5,11 @@
 @rendermode InteractiveWebAssembly
 ##endif*@
 @*#if (!InteractiveAtRoot) -->
-@using MudBlazor.Template.Client.Components
 
-<MudProviders />
+
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 ##endif*@
 
 <PageTitle>Weather</PageTitle>

@@ -1,12 +1,12 @@
 ﻿@*#if (UseWebAssembly) -->
-@using MudBlazor.Template.Client.Components
+
 ##endif*@
 @*#if (!UseWebAssembly) -->
 @using MudBlazor.Template.Components
 ##endif*@
 @inherits LayoutComponentBase
 
-<MudThemeNoPopoverProvider />
+<MudThemingProvider />
 
 <div class="page mud-layout">
 
