@@ -75,23 +75,6 @@
           }
         },
         {
-          "condition": "(InteractiveAtRoot)",
-          "exclude": [
-            "MudBlazor.Template/Components/Layout/MainLayout_PerPage.razor",
-            "MudBlazor.Template/Components/Layout/MainLayout_PerPage.razor.css"
-          ]
-        },
-        {
-          "condition": "(!InteractiveAtRoot)",
-          "exclude": [
-            "MudBlazor.Template/Components/Layout/MainLayout.razor"
-          ],
-          "rename": {
-            "MainLayout_PerPage.razor": "MainLayout.razor",
-            "MainLayout_PerPage.razor.css": "MainLayout.razor.css"
-          }
-        },
-        {
           "condition": "(UseWebAssembly && InteractiveAtRoot)",
           "rename": {
             "MudBlazor.Template/Components/Layout/": "./MudBlazor.Template.Client/Layout/",
