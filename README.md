@@ -19,6 +19,7 @@ We're excited to announce the availability of a new template for .NET 8 Web Apps
 ```
 dotnet new install MudBlazor.Templates
 ```
+
 ## Usage
 ### Interactive per Page
 ```
@@ -39,11 +40,18 @@ dotnet new mudblazor --interactivity Auto --auth Individual --all-interactive
 ### Visual Studio Templates
 The templates can also be used in Visual Studio and should show up in the list when creating a new project.
 
-### Using directly from Source Code
+## Contributing
+### Installing directly from Source Code
+If you want to test changes to the templates source code that hasn't been published yet 
+clone the source code and execute the InstallAndBuildAllTemplates.ps1 powershell script
 ```
 git clone https://github.com/MudBlazor/Templates.git
-dotnet new install ./Templates/src/MudBlazorWebTemplate
 ```
+If you get an error about the script not being digitally signed use this command to change the security policy for this shell session:
+```
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
 
 ## To Do for the .NET 8 Template
 
