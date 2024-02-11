@@ -11,9 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
-	<PackageReference Include="MudBlazor" Version="6.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="8.0.1" Condition="'$(IndividualLocalAuth)' == 'True'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="8.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
+  	<PackageReference Include="MudBlazor" Version="6.*" />
   </ItemGroup>
 
 </Project>
