@@ -1,7 +1,9 @@
 ﻿@page "/weather"
-@*#if (UseServer && !InteractiveAtRoot)
+@*#if (UseServer && UseWebAssembly && !InteractiveAtRoot)
 @rendermode InteractiveAuto
-##elseif (UseWebAssembly && !InteractiveAtRoot)
+##elseif (UseServer && !UseWebAssembly && !InteractiveAtRoot)
+@rendermode InteractiveServer
+##elseif (!UseServer && UseWebAssembly && !InteractiveAtRoot)
 @rendermode InteractiveWebAssembly
 ##endif*@
 
