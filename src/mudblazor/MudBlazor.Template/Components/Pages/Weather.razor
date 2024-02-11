@@ -1,5 +1,5 @@
 ﻿@page "/weather"
-@*#if (!InteractiveAtRoot)
+@*#if (!InteractiveAtRoot && (UseServer || UseWebAssembly))
 @rendermode InteractiveServer
 
 <MudPopoverProvider />

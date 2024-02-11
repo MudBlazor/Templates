@@ -100,8 +100,7 @@
         {
           "condition": "(!(UseServer && !UseWebAssembly))",
           "exclude": [
-            "MudBlazor.Template/Components/Pages/Counter.razor",
-            "MudBlazor.Template/Components/Pages/Weather.razor"
+            "MudBlazor.Template/Components/Pages/Counter.razor"
           ]
         },
         {
