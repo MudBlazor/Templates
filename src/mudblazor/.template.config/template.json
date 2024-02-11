@@ -79,7 +79,14 @@
           "rename": {
             "MudBlazor.Template/Components/Layout/": "./MudBlazor.Template.Client/Layout/",
             "MudBlazor.Template/Components/Pages/Home.razor": "./MudBlazor.Template.Client/Pages/Home.razor",
+            "MudBlazor.Template/Components/Pages/Weather.razor": "./MudBlazor.Template.Client/Pages/Weather.razor",
             "MudBlazor.Template/Components/Routes.razor": "./MudBlazor.Template.Client/Routes.razor"
+          }
+        },
+        {
+          "condition": "(UseWebAssembly && !InteractiveAtRoot)",
+          "rename": {
+            "MudBlazor.Template/Components/Pages/Weather.razor": "./MudBlazor.Template.Client/Pages/Weather.razor"
           }
         },
         {
