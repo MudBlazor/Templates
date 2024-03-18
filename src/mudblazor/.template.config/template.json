@@ -57,13 +57,7 @@
         "**/wwwroot/bootstrap/**"
       ],
       "modifiers": [
-        {
-          "condition": "(UseWebAssembly)",
-          "rename": {
-            "MudBlazor.Template/Components/MyMudProviders.razor": "MudBlazor.Template.Client/Components/MyMudProviders.razor",
-            "MudBlazor.Template/Components/MyMudThemeProvider.razor": "MudBlazor.Template.Client/Components/MyMudThemeProvider.razor"
-          }
-        },
+
         {
           "condition": "(!IndividualLocalAuth)",
           "exclude": [
@@ -81,28 +75,18 @@
           }
         },
         {
-          "condition": "(InteractiveAtRoot)",
-          "exclude": [
-            "MudBlazor.Template/Components/Layout/MainLayout_PerPage.razor",
-            "MudBlazor.Template/Components/Layout/MainLayout_PerPage.razor.css"
-          ]
-        },
-        {
-          "condition": "(!InteractiveAtRoot)",
-          "exclude": [
-            "MudBlazor.Template/Components/Layout/MainLayout.razor"
-          ],
-          "rename": {
-            "MainLayout_PerPage.razor": "MainLayout.razor",
-            "MainLayout_PerPage.razor.css": "MainLayout.razor.css"
-          }
-        },
-        {
           "condition": "(UseWebAssembly && InteractiveAtRoot)",
           "rename": {
             "MudBlazor.Template/Components/Layout/": "./MudBlazor.Template.Client/Layout/",
             "MudBlazor.Template/Components/Pages/Home.razor": "./MudBlazor.Template.Client/Pages/Home.razor",
+            "MudBlazor.Template/Components/Pages/Weather.razor": "./MudBlazor.Template.Client/Pages/Weather.razor",
             "MudBlazor.Template/Components/Routes.razor": "./MudBlazor.Template.Client/Routes.razor"
+          }
+        },
+        {
+          "condition": "(UseWebAssembly && !InteractiveAtRoot)",
+          "rename": {
+            "MudBlazor.Template/Components/Pages/Weather.razor": "./MudBlazor.Template.Client/Pages/Weather.razor"
           }
         },
         {
@@ -123,8 +107,7 @@
         {
           "condition": "(!(UseServer && !UseWebAssembly))",
           "exclude": [
-            "MudBlazor.Template/Components/Pages/Counter.razor",
-            "MudBlazor.Template/Components/Pages/Weather.razor"
+            "MudBlazor.Template/Components/Pages/Counter.razor"
           ]
         },
         {

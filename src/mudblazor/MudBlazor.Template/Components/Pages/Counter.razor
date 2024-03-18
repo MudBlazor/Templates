@@ -1,13 +1,10 @@
 ﻿@page "/counter"
-@*#if (!InteractiveAtRoot) -->
+@*#if (!InteractiveAtRoot)
 @rendermode InteractiveServer
-##endif*@
-@*#if (UseWebAssembly) -->
-@using MudBlazor.Template.Client.Components
-##endif*@
 
-@*#if (!InteractiveAtRoot) -->
-<MyMudProviders />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 ##endif*@
 
 <PageTitle>Counter</PageTitle>

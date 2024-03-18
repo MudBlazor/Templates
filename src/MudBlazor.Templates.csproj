@@ -5,7 +5,7 @@
     <!-- Follow the instructions on https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
     <PackageId>MudBlazor.Templates</PackageId>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageVersion>0.6.5</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Title>MudBlazor Templates</Title>
     <Company>MudBlazor</Company>
     <Authors>MudBlazor Team and Contributors</Authors>

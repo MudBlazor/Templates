@@ -4,10 +4,11 @@
 ##elseif (!InteractiveAtRoot)
 @rendermode InteractiveWebAssembly
 ##endif*@
-@*#if (!InteractiveAtRoot) -->
-@using MudBlazor.Template.Client.Components
 
-<MyMudProviders />
+@*#if (!InteractiveAtRoot)
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 ##endif*@
 
 <PageTitle>Counter</PageTitle>
