@@ -13,7 +13,9 @@
 ##endif*@
 <MudLayout>
     <MudAppBar Elevation="1">
-        @*#if (InteractiveAtRoot)
+        @*#if (IndividualLocalAuth)
+        <MudStaticNavDrawerToggle DrawerId="nav-drawer" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
+        ##elseif (InteractiveAtRoot)
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         ##endif*@
         <MudText Typo="Typo.h5" Class="ml-3">Application</MudText>
@@ -25,7 +27,7 @@
         <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
         ##endif*@
     </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+    <MudDrawer id="nav-drawer" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
         <NavMenu />
     </MudDrawer>
     <MudMainContent Class="mt-16 pa-4">
@@ -60,14 +62,11 @@
         };
     }
 
-    ##endif*@
-
     private void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
     }
 
-    @*#if (!IndividualLocalAuth)
     private void DarkModeToggle()
     {
         _isDarkMode = !_isDarkMode;

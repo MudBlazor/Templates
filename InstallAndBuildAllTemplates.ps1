@@ -29,6 +29,12 @@ dotnet build $(Join-Path $tests 'InteractivityWebAssembly_AllInteractive') /warn
 dotnet new mudblazor --interactivity Auto --output $(Join-Path $tests 'InteractivityAuto_Auth') --auth Individual
 dotnet build $(Join-Path $tests 'InteractivityAuto_Auth') /warnaserror
 
+dotnet new mudblazor --interactivity Server --output $(Join-Path $tests 'InteractivityServer_Auth') --auth Individual
+dotnet build $(Join-Path $tests 'InteractivityServer_Auth') /warnaserror
+
+dotnet new mudblazor --interactivity WebAssembly --output $(Join-Path $tests 'InteractivityWebAssembly_Auth') --auth Individual
+dotnet build $(Join-Path $tests 'InteractivityWebAssembly_Auth') /warnaserror
+
 dotnet new mudblazor --interactivity Auto --output $(Join-Path $tests 'InteractivityAuto_AllInteractive_Auth') --all-interactive --auth Individual
 dotnet build $(Join-Path $tests 'InteractivityAuto_AllInteractive_Auth') /warnaserror
 
