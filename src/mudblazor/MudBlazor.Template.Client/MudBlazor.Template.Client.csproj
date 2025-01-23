@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
-	<PackageReference Include="Extensions.MudBlazor.StaticInput" Version="3.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
+    <PackageReference Include="Extensions.MudBlazor.StaticInput" Version="3.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
     <PackageReference Include="MudBlazor" Version="8.*" />
   </ItemGroup>
 
