@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />  
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link href=@Assets["_content/MudBlazor/MudBlazor.min.css"] rel="stylesheet" />
     <ImportMap />
     @*#if (SampleContent)
     <link rel="icon" type="image/ico" href="favicon.ico" />
@@ -37,9 +37,9 @@
     <Routes @rendermode="InteractiveWebAssembly" />
     ##endif*@
     <script src="_framework/blazor.web.js"></script>
-    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src=@Assets["_content/MudBlazor/MudBlazor.min.js"]></script>
     @*#if (IndividualLocalAuth)
-    <script src="_content/Extensions.MudBlazor.StaticInput/NavigationObserver.js"></script>
+    <script src=@Assets["_content/Extensions.MudBlazor.StaticInput/NavigationObserver.js"]></script>
     ##endif*@
 </body>
 
