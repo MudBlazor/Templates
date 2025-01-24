@@ -4,7 +4,7 @@
     <!-- The package metadata. Fill in the properties marked as TODO below -->
     <!-- Follow the instructions on https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
     <PackageId>MudBlazor.Templates</PackageId>
-    <Version>3.0.0</Version>
+    <Version>3.1.0</Version>
     <Title>MudBlazor Templates</Title>
     <Company>MudBlazor</Company>
     <Authors>MudBlazor Team and Contributors</Authors>
