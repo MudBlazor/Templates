@@ -1,4 +1,4 @@
-# ![MudBlazor](content/MudBlazor-GitHub-NoBg.png)
+# ![MudBlazor Logo](content/MudBlazor-GitHub-NoBg-Dark.png)
 # Blazor Template pre-configured with MudBlazor.
 
 [![GitHub](https://img.shields.io/github/license/garderoben/mudblazor?color=%23594ae2&style=flat-square)](https://github.com/Garderoben/MudBlazor.Templates/blob/master/LICENSE)
