@@ -42,7 +42,7 @@ The templates can also be used in Visual Studio and should show up in the list w
 
 ## Contributing
 ### Installing directly from Source Code
-If you want to test changes to the templates source code that hasn't been published yet 
+If you want to test changes to the template source code that haven't been published yet, 
 clone the source code and execute the InstallAndBuildAllTemplates.ps1 powershell script
 ```
 git clone https://github.com/MudBlazor/Templates.git
