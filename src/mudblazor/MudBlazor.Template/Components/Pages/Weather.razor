@@ -1,12 +1,4 @@
 ﻿@page "/weather"
-@*#if (UseServer && UseWebAssembly && !InteractiveAtRoot)
-@rendermode InteractiveAuto
-##elseif (UseServer && !UseWebAssembly && !InteractiveAtRoot)
-@rendermode InteractiveServer
-##elseif (!UseServer && UseWebAssembly && !InteractiveAtRoot)
-@rendermode InteractiveWebAssembly
-##endif*@
-
 @*#if (!InteractiveAtRoot)
 <MudPopoverProvider />
 <MudDialogProvider />
