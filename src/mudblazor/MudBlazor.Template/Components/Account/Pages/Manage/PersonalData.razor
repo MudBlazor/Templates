@@ -1,6 +1,8 @@
 ﻿@page "/Account/Manage/PersonalData"
 
-@inject IdentityUserAccessor UserAccessor
+@using MudBlazor.Template.Data
+@inject UserManager<ApplicationUser> UserManager
+@inject IdentityRedirectManager RedirectManager
 
 <PageTitle>Personal Data</PageTitle>
 
@@ -36,6 +38,10 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _ = await UserAccessor.GetRequiredUserAsync(HttpContext);
+        var user = await UserManager.GetUserAsync(HttpContext.User);
+        if (user is null)
+        {
+            RedirectManager.RedirectToInvalidUser(UserManager, HttpContext);
+        }
     }
 }

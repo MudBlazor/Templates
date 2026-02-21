@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
-            9.0.x
+            10.0.x
       - name: Install and build all templates
         shell: pwsh
         run: |

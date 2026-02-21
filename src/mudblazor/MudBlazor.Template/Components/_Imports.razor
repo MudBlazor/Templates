@@ -16,4 +16,10 @@
 @*#if (UseWebAssembly) -->
 @using MudBlazor.Template.Client
 ##endif*@
+@*#if (UseServer && UseWebAssembly && InteractiveAtRoot) -->
+@using MudBlazor.Template.Client.Layout
+##endif*@
 @using MudBlazor.Template.Components
+@*#if ((UseServer && !UseWebAssembly) || !InteractiveAtRoot) -->
+@using MudBlazor.Template.Components.Layout
+##endif*@

@@ -36,10 +36,14 @@
     ##else
     <Routes @rendermode="InteractiveWebAssembly" />
     ##endif*@
-    <script src="_framework/blazor.web.js"></script>
+    @*#if (UseServer)  -->
+    <ReconnectModal />
+    ##endif*@
+    <script src=@Assets["_framework/blazor.web.js"]></script>
     <script src=@Assets["_content/MudBlazor/MudBlazor.min.js"]></script>
     @*#if (IndividualLocalAuth)
     <script src=@Assets["_content/Extensions.MudBlazor.StaticInput/NavigationObserver.js"]></script>
+    <script type="module" src=@Assets["Components/Account/Shared/PasskeySubmit.razor.js"]></script>
     ##endif*@
 </body>
 
