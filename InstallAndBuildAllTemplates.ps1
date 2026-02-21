@@ -29,6 +29,9 @@ dotnet build $(Join-Path $tests 'InteractivityWasm_Global') /warnaserror
 dotnet new mudblazor --interactivity Auto --output $(Join-Path $tests 'InteractivityAuto_Auth') --auth Individual
 dotnet build $(Join-Path $tests 'InteractivityAuto_Auth') /warnaserror
 
+dotnet new mudblazor --interactivity None --output $(Join-Path $tests 'InteractivityNone_Auth') --auth Individual
+dotnet build $(Join-Path $tests 'InteractivityNone_Auth') /warnaserror
+
 dotnet new mudblazor --interactivity Server --output $(Join-Path $tests 'InteractivityServer_Auth') --auth Individual
 dotnet build $(Join-Path $tests 'InteractivityServer_Auth') /warnaserror
 
@@ -37,6 +40,18 @@ dotnet build $(Join-Path $tests 'InteractivityWasm_Auth') /warnaserror
 
 dotnet new mudblazor --interactivity Auto --output $(Join-Path $tests 'InteractivityAuto_Global_Auth') --all-interactive --auth Individual
 dotnet build $(Join-Path $tests 'InteractivityAuto_Global_Auth') /warnaserror
+
+dotnet new mudblazor --interactivity Server --output $(Join-Path $tests 'InteractivityServer_Global_Auth') --all-interactive --auth Individual
+dotnet build $(Join-Path $tests 'InteractivityServer_Global_Auth') /warnaserror
+
+dotnet new mudblazor --interactivity WebAssembly --output $(Join-Path $tests 'InteractivityWasm_Global_Auth') --all-interactive --auth Individual
+dotnet build $(Join-Path $tests 'InteractivityWasm_Global_Auth') /warnaserror
+
+dotnet new mudblazor --interactivity Server --output $(Join-Path $tests 'InteractivityServer_Auth_LocalDb') --auth Individual --use-local-db
+dotnet build $(Join-Path $tests 'InteractivityServer_Auth_LocalDb') /warnaserror
+
+dotnet new mudblazor --interactivity Auto --output $(Join-Path $tests 'InteractivityAuto_Auth_LocalDb') --auth Individual --use-local-db
+dotnet build $(Join-Path $tests 'InteractivityAuto_Auth_LocalDb') /warnaserror
 
 dotnet new mudblazor --interactivity Auto --output $(Join-Path $tests 'InteractivityAuto_UseMain') --use-program-main
 dotnet build $(Join-Path $tests 'InteractivityAuto_UseMain') /warnaserror
