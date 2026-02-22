@@ -4,7 +4,7 @@
     <!-- The package metadata. Fill in the properties marked as TODO below -->
     <!-- Follow the instructions on https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
     <PackageId>MudBlazor.Templates</PackageId>
-    <Version>4.0.1</Version>
+    <Version>4.1.0</Version>
     <Title>MudBlazor Templates</Title>
     <Company>MudBlazor</Company>
     <Authors>MudBlazor Team and Contributors</Authors>
@@ -44,6 +44,7 @@
 
   <ItemGroup>
     <Content Include="mudblazor\**\*" Exclude="mudblazor\**\bin\**;mudblazor\**\obj\**" />
+    <Content Include="mudblazor-wasm\**\*" Exclude="mudblazor-wasm\**\bin\**;mudblazor-wasm\**\obj\**" />
     <Compile Remove="**\*" />
   </ItemGroup>
 </Project>

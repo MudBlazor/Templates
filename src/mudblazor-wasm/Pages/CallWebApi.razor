@@ -1,0 +1,81 @@
+@page "/callwebapi"
+@using System.Net.Http.Headers
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inject HttpClient Http
+@inject IAccessTokenProvider TokenProvider
+
+<PageTitle>Call Web API</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Call Web API</MudText>
+<MudText Typo="Typo.body1" Class="mb-6">
+    This page demonstrates requesting an access token and calling a protected web API.
+</MudText>
+
+<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="CallApiAsync" Disabled="_isLoading">
+    @_buttonText
+</MudButton>
+
+@if (!string.IsNullOrWhiteSpace(_error))
+{
+    <MudAlert Severity="Severity.Error" Class="mt-6">@_error</MudAlert>
+}
+
+@if (!string.IsNullOrWhiteSpace(_responseText))
+{
+    <MudPaper Class="pa-4 mt-6" Outlined="true">
+        <MudText Typo="Typo.subtitle2" GutterBottom="true">Response</MudText>
+        <MudText Typo="Typo.body2" Style="white-space: pre-wrap;">@_responseText</MudText>
+    </MudPaper>
+}
+
+@code {
+    private bool _isLoading;
+    private string? _responseText;
+    private string? _error;
+
+    private string _buttonText => _isLoading ? "Calling..." : "Call API";
+
+    private async Task CallApiAsync()
+    {
+        _isLoading = true;
+        _error = null;
+        _responseText = null;
+
+        try
+        {
+            var scopes = "user.read"
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+            var tokenResult = await TokenProvider.RequestAccessToken(
+                new AccessTokenRequestOptions
+                {
+                    Scopes = scopes
+                });
+
+            if (!tokenResult.TryGetToken(out var token))
+            {
+                _error = "Unable to acquire an access token. Sign in again and verify API scope configuration.";
+                return;
+            }
+
+            using var request = new HttpRequestMessage(HttpMethod.Get, "[WebApiUrl]");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Value);
+
+            using var response = await Http.SendAsync(request);
+            _responseText = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                _error = $"API returned {(int)response.StatusCode} {response.ReasonPhrase}.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _error = ex.Message;
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+}

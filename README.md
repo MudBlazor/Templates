@@ -36,10 +36,11 @@ To preview updates without changing anything:
 dotnet new update --check-only
 ```
 
-To verify which version is installed / available:
+To verify which versions/templates are installed / available:
 
 ```bash
 dotnet new list mudblazor
+dotnet new list mudblazorwasm
 ```
 
 If you want to reinstall manually (for example, to pin a specific version), uninstall and install again:
@@ -59,6 +60,10 @@ dotnet new install MudBlazor.Templates::<version>
 
 ## Usage
 ### Common Commands
+
+Templates included in this package:
+- `mudblazor` = MudBlazor Web App (Blazor Web App / interactivity modes)
+- `mudblazorwasm` = MudBlazor WebAssembly Standalone App
 
 Create a new app (default is `Server` interactivity):
 ```bash
@@ -128,6 +133,53 @@ dotnet new mudblazor -n Acme.Portal -o src/Acme.Portal -int WebAssembly
 For the complete option list (including advanced template options), run:
 ```bash
 dotnet new mudblazor --help
+```
+
+### Standalone WASM (`mudblazorwasm`)
+
+Create a new standalone WebAssembly app:
+```bash
+dotnet new mudblazorwasm -o MyMudWasmApp
+```
+
+Create a standalone WebAssembly app with Individual auth (this also exercises the `MissingAuthority` guidance by default until provider values are configured):
+```bash
+dotnet new mudblazorwasm -o MyMudWasmApp --auth Individual
+```
+
+Create a standalone WebAssembly app with Azure AD B2C auth:
+```bash
+dotnet new mudblazorwasm -o MyMudWasmApp --auth IndividualB2C
+```
+
+Create a standalone WebAssembly app with single-tenant organizational auth:
+```bash
+dotnet new mudblazorwasm -o MyMudWasmApp --auth SingleOrg
+```
+
+Create a standalone PWA:
+```bash
+dotnet new mudblazorwasm -o MyMudWasmApp --pwa
+```
+
+Create an empty standalone app (omit sample/demo pages and styling):
+```bash
+dotnet new mudblazorwasm -o MyMudWasmApp --empty
+```
+
+Create a standalone app using explicit `Program.Main`:
+```bash
+dotnet new mudblazorwasm -o MyMudWasmApp --use-program-main
+```
+
+Generate the "Call Web API" sample navigation/page variant (B2C + non-default API settings):
+```bash
+dotnet new mudblazorwasm -o MyMudWasmApp --auth IndividualB2C --called-api-url https://example.com/api --called-api-scopes api.read
+```
+
+For the complete standalone WASM option list, run:
+```bash
+dotnet new mudblazorwasm --help
 ```
 
 ### Visual Studio Templates
