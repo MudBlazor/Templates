@@ -68,7 +68,6 @@
             "MudBlazor.Template/Components/Layout/": "./MudBlazor.Template.Client/Layout/",
             "MudBlazor.Template/Components/Pages/Home.razor": "./MudBlazor.Template.Client/Pages/Home.razor",
             "MudBlazor.Template/Components/Pages/NotFound.razor": "./MudBlazor.Template.Client/Pages/NotFound.razor",
-            "MudBlazor.Template/Components/Pages/Weather.razor": "./MudBlazor.Template.Client/Pages/Weather.razor",
             "MudBlazor.Template/Components/Routes.razor": "./MudBlazor.Template.Client/Routes.razor"
           }
         },
@@ -92,7 +91,8 @@
         {
           "condition": "(!(UseServer && !UseWebAssembly))",
           "exclude": [
-            "MudBlazor.Template/Components/Pages/Counter.razor"
+            "MudBlazor.Template/Components/Pages/Counter.razor",
+            "MudBlazor.Template/Components/Pages/Weather.razor"
           ]
         },
         {
