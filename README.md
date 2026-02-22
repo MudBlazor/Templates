@@ -12,7 +12,7 @@ We're excited to announce the availability of a new template for .NET 10 Web App
 ## Prerequisites
 
 - .NET 10 SDK
-- Visual Studio 2022, JetBrains Rider or Visual Studio Code 
+- Visual Studio 2026, JetBrains Rider or Visual Studio Code 
 
 ## Getting Started
 ### Installation
@@ -20,25 +20,119 @@ We're excited to announce the availability of a new template for .NET 10 Web App
 dotnet new install MudBlazor.Templates
 ```
 
+### Updating the Template
+
+If you already installed `MudBlazor.Templates` and want the latest version, update your installed template packages with:
+
+```bash
+dotnet new update
+```
+
+This checks installed template packages and installs available updates.
+
+To preview updates without changing anything:
+
+```bash
+dotnet new update --check-only
+```
+
+To verify which version is installed / available:
+
+```bash
+dotnet new list mudblazor
+```
+
+If you want to reinstall manually (for example, to pin a specific version), uninstall and install again:
+
+```bash
+dotnet new uninstall MudBlazor.Templates
+dotnet new install MudBlazor.Templates
+```
+
+Install a specific version:
+
+```bash
+dotnet new install MudBlazor.Templates::<version>
+```
+
+`dotnet new update` updates all installed template packages, not just `MudBlazor.Templates`.
+
 ## Usage
-### Interactive per Page
-```
-dotnet new mudblazor --interactivity (Auto|Server|WebAssembly)
+### Common Commands
+
+Create a new app (default is `Server` interactivity):
+```bash
+dotnet new mudblazor -o MyMudApp
 ```
 
-### Interactive Global
-```
-dotnet new mudblazor --interactivity (Auto|Server|WebAssembly) --all-interactive
+Create a static server-rendered app (no interactivity):
+```bash
+dotnet new mudblazor -o MyMudApp -int None
 ```
 
-### Adding Authentication
+Create an app with per-page interactive components:
+```bash
+dotnet new mudblazor -o MyMudApp -int Auto
 ```
-dotnet new mudblazor --interactivity Auto --auth Individual
-dotnet new mudblazor --interactivity Auto --auth Individual --all-interactive
+
+Create an app with interactive rendering enabled globally:
+```bash
+dotnet new mudblazor -o MyMudApp -int Auto -ai
+```
+
+Create an app with Individual authentication:
+```bash
+dotnet new mudblazor -o MyMudApp -int Auto -au Individual
+```
+
+Create an app with Individual authentication and global interactivity:
+```bash
+dotnet new mudblazor -o MyMudApp -int Auto -au Individual -ai
+```
+
+Create an app with Individual authentication using LocalDB (instead of SQLite):
+```bash
+dotnet new mudblazor -o MyMudApp -au Individual -uld
+```
+
+Create an empty starter (omit sample/demo pages and styling):
+```bash
+dotnet new mudblazor -o MyMudApp -e
+```
+
+Create an app without HTTPS (for local development only):
+```bash
+dotnet new mudblazor -o MyMudApp --no-https
+```
+
+Create an app with a custom project name and output folder:
+```bash
+dotnet new mudblazor -n Acme.Portal -o src/Acme.Portal -int WebAssembly
+```
+
+### Options (Common)
+
+| Option | Values / Type | Default | Description / Notes |
+| --- | --- | --- | --- |
+| `-int`, `--interactivity` | `Auto`, `None`, `Server`, `WebAssembly` | `Server` | Selects the interactive render mode. Use `None` for static SSR only. |
+| `-ai`, `--all-interactive` | `bool` | `false` | Applies interactivity globally (root-level). Only enabled when interactivity is not `None`. |
+| `-au`, `--auth` | `None`, `Individual` | `None` | Adds authentication support. |
+| `-uld`, `--use-local-db` | `bool` | `false` | Uses LocalDB instead of SQLite. Only applies with `-au Individual`. |
+| `-e`, `--empty` | `bool` | `false` | Omits sample pages and demo styling. |
+| `--no-https` | `bool` | `false` | Disables HTTPS for local development. Ignored when `-au Individual` is used. |
+| `--exclude-launch-settings` | `bool` | `false` | Excludes `Properties/launchSettings.json` from generated output. |
+| `--no-restore` | `bool` | `false` | Skips automatic `dotnet restore` after project creation. |
+| `--use-program-main` | `bool` | `false` | Generates an explicit `Program` class and `Main` method instead of top-level statements. |
+| `--localhost-tld` | `bool` | `false` | Uses the `.dev.localhost` TLD in the local application URL. |
+
+For the complete option list (including advanced template options), run:
+```bash
+dotnet new mudblazor --help
 ```
 
 ### Visual Studio Templates
-The templates can also be used in Visual Studio and should show up in the list when creating a new project.
+The templates can also be used in Visual Studio and should show up in the "Create a new project" template list.
+Common options map to Visual Studio's project creation UI, but the CLI examples above are the best reference for advanced combinations and flags.
 
 ## Contributing
 ### Installing directly from Source Code
