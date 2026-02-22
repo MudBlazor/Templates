@@ -3,11 +3,11 @@
 
 <AuthorizeView>
     <Authorized>
-        Hello, @context.User.Identity?.Name!
-        <button class="nav-link btn btn-link" @onclick="BeginLogOut">Log out</button>
+        <MudText Typo="Typo.body2" Class="d-inline mr-2">Hello, @context.User.Identity?.Name!</MudText>
+        <MudButton Variant="Variant.Text" Color="Color.Inherit" OnClick="BeginLogOut">Log out</MudButton>
     </Authorized>
     <NotAuthorized>
-        <a href="authentication/login">Log in</a>
+        <MudLink Href="authentication/login" Color="Color.Inherit" Underline="Underline.Hover" Typo="Typo.body2">Log in</MudLink>
     </NotAuthorized>
 </AuthorizeView>
 

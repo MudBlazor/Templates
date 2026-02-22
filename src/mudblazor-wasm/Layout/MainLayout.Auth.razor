@@ -1,4 +1,4 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
 <MudThemeProvider />
 <MudPopoverProvider />
@@ -6,24 +6,36 @@
 <MudSnackbarProvider />
 
 @*#if (SampleContent) -->
-<div class="page">
-    <div class="sidebar">
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@DrawerToggle" />
+        <MudText Typo="Typo.h6" Class="ml-2">Application</MudText>
+        <MudSpacer />
+        <LoginDisplay />
+        <MudLink Href="https://learn.microsoft.com/aspnet/core/" Target="_blank" Color="Color.Inherit" Underline="Underline.None" Class="ml-4">
+            About
+        </MudLink>
+    </MudAppBar>
+
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
         <NavMenu />
-    </div>
+    </MudDrawer>
 
-    <main>
-        <div class="top-row px-4 auth">
-            <LoginDisplay />
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+    <MudMainContent Class="pt-16 pa-4">
+        @Body
+    </MudMainContent>
+</MudLayout>
 ##else
 <LoginDisplay />
 
 @Body
 ##endif*@
+
+@code {
+    private bool _drawerOpen = true;
+
+    private void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}
