@@ -14,10 +14,12 @@ html, body {
     backdrop-filter: blur(6px);
     box-sizing: border-box;
     display: none;
-    left: 1rem;
-    right: 1rem;
+    left: 50%;
+    right: auto;
     bottom: 1rem;
-    padding: 0.85rem 3.25rem 0.85rem 1rem;
+    width: min(52rem, calc(100vw - 2rem));
+    transform: translateX(-50%);
+    padding: 0.85rem 4rem 0.85rem 1rem;
     position: fixed;
     z-index: 2000;
 }
@@ -36,7 +38,7 @@ html, body {
     #blazor-error-ui .dismiss {
         cursor: pointer;
         position: absolute;
-        right: 0.75rem;
+        right: 1rem;
         top: 0.55rem;
         width: 1.75rem;
         height: 1.75rem;
