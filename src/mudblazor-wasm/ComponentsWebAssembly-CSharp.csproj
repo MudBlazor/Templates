@@ -15,6 +15,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.*" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="10.*" Condition="'$(IndividualLocalAuth)' == 'true'" />
     <PackageReference Include="Microsoft.Authentication.WebAssembly.Msal" Version="10.*" Condition="'$(OrganizationalAuth)' == 'true' OR '$(IndividualB2CAuth)' == 'true'" />
+    <PackageReference Include="MudBlazor" Version="9.*" />
   </ItemGroup>
 
   <!--#if PWA -->
