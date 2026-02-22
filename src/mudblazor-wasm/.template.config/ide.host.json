@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/ide.host",
   "order": 610,
-  "icon": "ide/icon.ico",
+  "icon": "icon.png",
   "disableHttpsSymbol": "NoHttps",
   "symbolInfo": [
     {
