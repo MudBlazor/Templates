@@ -1,6 +1,6 @@
-﻿{
-  "author": "Microsoft",
-  "name": "App Web Blazor",
+{
+  "author": "MudBlazor",
+  "name": "App Web MudBlazor",
   "description": "Modello di progetto per la creazione di un'app Web Blazor che supporta sia il rendering lato server sia l'interattività client. Questo modello può essere usato per app Web con interfacce utente dinamiche avanzate.",
   "symbols/Framework/description": "Il framework di destinazione per il progetto.",
   "symbols/Framework/choices/net10.0/description": "Target net10.0",
@@ -42,3 +42,5 @@
   "postActions/restore/description": "Ripristina i pacchetti NuGet richiesti da questo progetto.",
   "postActions/restore/manualInstructions/default/text": "Esegui 'dotnet restore'"
 }
+
+

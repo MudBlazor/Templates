@@ -1,6 +1,6 @@
 {
-  "author": "Microsoft",
-  "name": "Blazor Web App",
+  "author": "MudBlazor",
+  "name": "MudBlazor Web App",
   "description": "A project template for creating a Blazor web app that supports both server-side rendering and client interactivity. This template can be used for web apps with rich dynamic user interfaces (UIs).",
   "symbols/Framework/description": "The target framework for the project.",
   "symbols/Framework/choices/net10.0/description": "Target net10.0",
@@ -42,3 +42,5 @@
   "postActions/restore/description": "Restore NuGet packages required by this project.",
   "postActions/restore/manualInstructions/default/text": "Run 'dotnet restore'"
 }
+
+

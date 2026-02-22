@@ -1,6 +1,6 @@
-﻿{
-  "author": "Майкрософт",
-  "name": "Веб-приложение Blazor",
+{
+  "author": "MudBlazor",
+  "name": "Веб-приложение MudBlazor",
   "description": "Шаблон проекта для создания приложения Blazor, поддерживающего как отрисовку на стороне сервера, так и интерактивные возможности клиента. Этот шаблон можно использовать для веб-приложений с многофункциональными динамическими пользовательскими интерфейсами (UI).",
   "symbols/Framework/description": "Целевая платформа для проекта.",
   "symbols/Framework/choices/net10.0/description": "Target net10.0",
@@ -42,3 +42,5 @@
   "postActions/restore/description": "Восстановление пакетов NuGet, необходимых для этого проекта.",
   "postActions/restore/manualInstructions/default/text": "Выполнить команду \"dotnet restore\""
 }
+
+

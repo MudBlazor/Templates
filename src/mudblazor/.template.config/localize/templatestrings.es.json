@@ -1,6 +1,6 @@
-﻿{
-  "author": "Microsoft",
-  "name": "Aplicación web Blazor",
+{
+  "author": "MudBlazor",
+  "name": "Aplicación web MudBlazor",
   "description": "Plantilla de proyecto para crear una aplicación web de Blazor que admita tanto la representación del lado del servidor como la interactividad del cliente. Esta plantilla se puede usar para las aplicaciones web con interfaces de usuario dinámicas enriquecidas.",
   "symbols/Framework/description": "Marco de destino del proyecto.",
   "symbols/Framework/choices/net10.0/description": "Target net10.0",
@@ -42,3 +42,5 @@
   "postActions/restore/description": "Restaure los paquetes NuGet necesarios para este proyecto.",
   "postActions/restore/manualInstructions/default/text": "Ejecutar \"dotnet restore\""
 }
+
+
