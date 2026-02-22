@@ -7,6 +7,7 @@
     <title>ComponentsWebAssembly-CSharp</title>
     <base href="/" />
     <link rel="preload" id="webassembly" />
+    <link rel="stylesheet" href="_content/MudBlazor/MudBlazor.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <!--#if SampleContent -->
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -43,6 +44,7 @@
 <!--#if (IndividualB2CAuth || OrganizationalAuth)  -->
     <script src="_content/Microsoft.Authentication.WebAssembly.Msal/AuthenticationService.js"></script>
 <!--#endif  -->
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
     <!--#if PWA -->
     <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
