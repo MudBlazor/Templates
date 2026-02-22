@@ -14,13 +14,13 @@
 <MudText Typo="Typo.h3" GutterBottom="true">Weather forecast</MudText>
 <MudText Typo="Typo.body1" Class="mb-8">This component demonstrates fetching data from the server.</MudText>
 
-@if (forecasts == null)
+@if (Forecasts == null)
 {
     <MudProgressCircular Color="Color.Default" Indeterminate="true" />
 }
 else
 {
-  <MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0" AllowUnsorted="false">
+  <MudTable Items="Forecasts" Hover="true" SortLabel="Sort By" Elevation="0" AllowUnsorted="false">
         <HeaderContent>
             <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x=>x.Date)">Date</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.TemperatureC)">Temp. (C)</MudTableSortLabel></MudTh>
@@ -40,24 +40,28 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    [PersistentState(AllowUpdates = true)]
+    public WeatherForecast[]? Forecasts { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        // Simulate asynchronous loading to demonstrate a loading indicator
-        await Task.Delay(500);
-
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        if (Forecasts is null)
         {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
-        }).ToArray();
+            // Simulate asynchronous loading to demonstrate a loading indicator
+            await Task.Delay(500);
+
+            var startDate = DateOnly.FromDateTime(DateTime.Now);
+            var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+            Forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = startDate.AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = summaries[Random.Shared.Next(summaries.Length)]
+            }).ToArray();
+        }
     }
 
-    private class WeatherForecast
+    public class WeatherForecast
     {
         public DateOnly Date { get; set; }
         public int TemperatureC { get; set; }
