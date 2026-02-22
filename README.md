@@ -7,11 +7,11 @@
 [![Nuget version](https://img.shields.io/nuget/v/MudBlazor.Templates?color=ff4081&label=nuget%20version&logo=nuget&style=flat-square)](https://www.nuget.org/packages/MudBlazor.Templates/)
 [![Nuget downloads](https://img.shields.io/nuget/dt/MudBlazor.Templates?color=ff4081&label=nuget%20downloads&logo=nuget&style=flat-square)](https://www.nuget.org/packages/MudBlazor.Templates/)
 
-We're excited to announce the availability of a new template for .NET 9 Web Apps: the MudBlazor Web App template. This template is based on the Microsoft Web App template, but has been modified to include MudBlazor components.
+We're excited to announce the availability of a new template for .NET 10 Web Apps: the MudBlazor Web App template. This template is based on the Microsoft Web App template, but has been modified to include MudBlazor components.
 
 ## Prerequisites
 
-- .NET 9 SDK
+- .NET 10 SDK
 - Visual Studio 2022, JetBrains Rider or Visual Studio Code 
 
 ## Getting Started
