@@ -1,20 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
     <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
     <RootNamespace Condition="'$(name)' != '$(name{-VALUE-FORMS-}safe_namespace)'">MudBlazor.Template.Client</RootNamespace>
     <AssemblyName Condition="'$(name)' != '$(name{-VALUE-FORMS-}safe_namespace)'">`$(AssemblyName.Replace(' ', '_'))</AssemblyName>
+    <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
-    <PackageReference Include="Extensions.MudBlazor.StaticInput" Version="3.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
-    <PackageReference Include="MudBlazor" Version="8.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="10.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
+    <PackageReference Include="Extensions.MudBlazor.StaticInput" Version="4.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
+    <PackageReference Include="MudBlazor" Version="9.*" />
   </ItemGroup>
 
 </Project>

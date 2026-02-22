@@ -18,7 +18,7 @@
     "650B3CE7-2E93-4CC4-9F46-466686815EAA",
     "53bc9b9d-9d6a-45d4-8429-2a2761773502"
   ],
-  "identity": "MudBlazorWebApp.CSharp.9.0",
+  "identity": "MudBlazorWebApp.CSharp.10.0",
   "thirdPartyNotices": "",
   "preferNameDirectory": true,
   "primaryOutputs": [
@@ -67,7 +67,7 @@
           "rename": {
             "MudBlazor.Template/Components/Layout/": "./MudBlazor.Template.Client/Layout/",
             "MudBlazor.Template/Components/Pages/Home.razor": "./MudBlazor.Template.Client/Pages/Home.razor",
-            "MudBlazor.Template/Components/Pages/Weather.razor": "./MudBlazor.Template.Client/Pages/Weather.razor",
+            "MudBlazor.Template/Components/Pages/NotFound.razor": "./MudBlazor.Template.Client/Pages/NotFound.razor",
             "MudBlazor.Template/Components/Routes.razor": "./MudBlazor.Template.Client/Routes.razor"
           }
         },
@@ -91,7 +91,16 @@
         {
           "condition": "(!(UseServer && !UseWebAssembly))",
           "exclude": [
-            "MudBlazor.Template/Components/Pages/Counter.razor"
+            "MudBlazor.Template/Components/Pages/Counter.razor",
+            "MudBlazor.Template/Components/Pages/Weather.razor"
+          ]
+        },
+        {
+          "condition": "(!UseServer)",
+          "exclude": [
+            "MudBlazor.Template/Components/Layout/ReconnectModal.razor",
+            "MudBlazor.Template/Components/Layout/ReconnectModal.razor.css",
+            "MudBlazor.Template/Components/Layout/ReconnectModal.razor.js"
           ]
         },
         {
@@ -191,19 +200,57 @@
       ]
     }
   ],
+  "forms": {
+    "lowerCaseInvariantWithHyphens": {
+      "identifier": "chain",
+      "steps": [
+        "lowerCaseInvariant",
+        "replaceDnsInvalidChars",
+        "replaceRepeatedHyphens",
+        "trimLeadingHyphens",
+        "trimTrailingHyphens"
+      ]
+    },
+    "replaceDnsInvalidChars": {
+      "identifier": "replace",
+      "pattern": "[^a-z0-9-]",
+      "replacement": "-"
+    },
+    "replaceRepeatedHyphens": {
+      "identifier": "replace",
+      "pattern": "-{2,}",
+      "replacement": "-"
+    },
+    "trimLeadingHyphens": {
+      "identifier": "replace",
+      "pattern": "^-+",
+      "replacement": ""
+    },
+    "trimTrailingHyphens": {
+      "identifier": "replace",
+      "pattern": "-+$",
+      "replacement": ""
+    }
+  },
   "symbols": {
+    "hostName": {
+      "type": "derived",
+      "valueSource": "name",
+      "valueTransform": "lowerCaseInvariantWithHyphens",
+      "replaces": "LocalhostTldHostNamePrefix"
+    },
     "Framework": {
       "type": "parameter",
       "description": "The target framework for the project.",
       "datatype": "choice",
       "choices": [
         {
-          "choice": "net9.0",
-          "description": "Target net9.0"
+          "choice": "net10.0",
+          "description": "Target net10.0"
         }
       ],
-      "replaces": "net9.0",
-      "defaultValue": "net9.0"
+      "replaces": "net10.0",
+      "defaultValue": "net10.0"
     },
     "HostIdentifier": {
       "type": "bind",
@@ -312,10 +359,24 @@
       },
       "replaces": "44300"
     },
+    "StyleBundleName": {
+      "type": "generated",
+      "generator": "regex",
+      "replaces": "StyleBundleName",
+      "parameters": {
+        "source": "name",
+        "steps": [
+          {
+            "regex": " ",
+            "replacement": "_"
+          }
+        ]
+      }
+    },
     "InteractivityPlatform": {
       "type": "parameter",
       "datatype": "choice",
-      "defaultValue": "WebAssembly",
+      "defaultValue": "Server",
       "displayName": "_Interactive render mode",
       "description": "Chooses which interactive render mode to use for interactive components",
       "choices": [
@@ -344,7 +405,7 @@
     "InteractivityLocation": {
       "type": "parameter",
       "datatype": "choice",
-      "defaultValue": "InteractiveGlobal",
+      "defaultValue": "InteractivePerPage",
       "displayName": "_Interactivity location",
       "description": "Chooses which components will have interactive rendering enabled",
       "isEnabled": "(InteractivityPlatform != \"None\")",
@@ -456,6 +517,13 @@
       "defaultValue": "false",
       "displayName": "Do not use _top-level statements",
       "description": "Whether to generate an explicit Program class and Main method instead of top-level statements."
+    },
+    "LocalhostTld": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "displayName": "Use the .dev.localhost TLD in the application URL",
+      "description": "Whether to combine the project name with the .dev.localhost TLD in the application URL for local development."
     }
   },
   "tags": {

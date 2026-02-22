@@ -4,7 +4,7 @@
     <!-- The package metadata. Fill in the properties marked as TODO below -->
     <!-- Follow the instructions on https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
     <PackageId>MudBlazor.Templates</PackageId>
-    <Version>3.2.0</Version>
+    <Version>4.0.0</Version>
     <Title>MudBlazor Templates</Title>
     <Company>MudBlazor</Company>
     <Authors>MudBlazor Team and Contributors</Authors>
@@ -18,7 +18,7 @@
 
     <!-- Keep package type as 'Template' to show the package as a template package on nuget.org and make your template available in dotnet new search.-->
     <PackageType>Template</PackageType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
