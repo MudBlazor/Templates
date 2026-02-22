@@ -44,6 +44,7 @@
 
   <ItemGroup>
     <Content Include="mudblazor\**\*" Exclude="mudblazor\**\bin\**;mudblazor\**\obj\**" />
+    <Content Include="mudblazor-wasm\**\*" Exclude="mudblazor-wasm\**\bin\**;mudblazor-wasm\**\obj\**" />
     <Compile Remove="**\*" />
   </ItemGroup>
 </Project>
