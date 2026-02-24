@@ -1,6 +1,6 @@
 /*#if (SampleContent)*/
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 /*#endif*/
 
@@ -82,7 +82,7 @@ html, body {
     }
 
         .loading-progress circle:last-child {
-            stroke: #1b6ec2;
+            stroke: #7e6fff;
             stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
             transition: stroke-dasharray 0.05s ease-in-out;
         }
