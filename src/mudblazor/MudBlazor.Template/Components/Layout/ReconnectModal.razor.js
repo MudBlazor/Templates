@@ -52,7 +52,13 @@ async function resume() {
             location.reload();
         }
     } catch {
-        reconnectModal.classList.replace("components-reconnect-paused", "components-reconnect-resume-failed");
+        if (reconnectModal.classList.contains("components-reconnect-paused")) {
+            reconnectModal.classList.replace("components-reconnect-paused", "components-reconnect-resume-failed");
+        } else if (reconnectModal.classList.contains("components-pause")) {
+            reconnectModal.classList.replace("components-pause", "components-resume-failed");
+        } else {
+            reconnectModal.classList.add("components-reconnect-resume-failed");
+        }
     }
 }
 
