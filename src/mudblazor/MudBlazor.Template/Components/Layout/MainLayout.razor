@@ -14,7 +14,7 @@
 <MudLayout>
     <MudAppBar Elevation="1">
         @*#if (IndividualLocalAuth)
-        <MudStaticNavDrawerToggle @bind-Open="_drawerOpen" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
+        <MudStaticNavDrawerToggle DrawerId="nav-drawer" @bind-Open="_drawerOpen" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
         ##elseif (InteractiveAtRoot)
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         ##endif*@
