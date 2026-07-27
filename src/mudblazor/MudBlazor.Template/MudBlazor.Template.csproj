@@ -30,6 +30,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="10.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.*" Condition="'$(IndividualLocalAuth)' == 'True' AND '$(UseLocalDB)' != 'True'" />
+    <!-- EF Core still resolves SQLitePCLRaw 2.1.11, which GHSA-2m69-gcr7-jv3q flags as a high severity vulnerability. Remove once EF Core ships a version that resolves 2.1.12 or later on its own. -->
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.*" Condition="'$(IndividualLocalAuth)' == 'True' AND '$(UseLocalDB)' != 'True'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.*" Condition="'$(IndividualLocalAuth)' == 'True' AND '$(UseLocalDB)' == 'True'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.*" Condition="'$(IndividualLocalAuth)' == 'True'" />
     <PackageReference Include="MudBlazor" Version="9.*" Condition="'$(UseWebAssembly)' != 'True'" />
