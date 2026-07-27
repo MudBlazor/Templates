@@ -1,4 +1,0 @@
-{
-  "$schema": "./build.schema.json",
-  "Solution": "src/MudBlazor.Templates.sln"
-}
