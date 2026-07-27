@@ -28,7 +28,7 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
           restore-keys: ${{ runner.os }}-nuget-
       - name: Pack
-        run: dotnet pack src/MudBlazor.Templates.sln --configuration Release --output artifacts/packages
+        run: dotnet pack src/MudBlazor.Templates.slnx --configuration Release --output artifacts/packages
       - name: 'Push: nuget.org'
         env:
           NUGET_KEY: ${{ secrets.NUGET_KEY }}

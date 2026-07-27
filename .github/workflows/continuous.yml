@@ -28,11 +28,11 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
           restore-keys: ${{ runner.os }}-nuget-
       - name: Restore
-        run: dotnet restore src/MudBlazor.Templates.sln
+        run: dotnet restore src/MudBlazor.Templates.slnx
       - name: Build
-        run: dotnet build src/MudBlazor.Templates.sln --configuration Release --no-restore
+        run: dotnet build src/MudBlazor.Templates.slnx --configuration Release --no-restore
       - name: Pack
-        run: dotnet pack src/MudBlazor.Templates.sln --configuration Release --no-build --output artifacts/packages
+        run: dotnet pack src/MudBlazor.Templates.slnx --configuration Release --no-build --output artifacts/packages
       - name: 'Publish: packages'
         uses: actions/upload-artifact@v4
         with:
