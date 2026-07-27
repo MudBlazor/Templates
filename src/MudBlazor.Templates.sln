@@ -5,16 +5,12 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazor.Templates", "MudBlazor.Templates.csproj", "{7EAFF69B-A5AD-4A6C-A70D-DA61C3278F20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "..\build\_build.csproj", "{966D7AB6-EF71-43CF-AB0D-0AC39621EF54}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{966D7AB6-EF71-43CF-AB0D-0AC39621EF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{966D7AB6-EF71-43CF-AB0D-0AC39621EF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EAFF69B-A5AD-4A6C-A70D-DA61C3278F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7EAFF69B-A5AD-4A6C-A70D-DA61C3278F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EAFF69B-A5AD-4A6C-A70D-DA61C3278F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
