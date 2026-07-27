@@ -16,7 +16,13 @@
 
 name: continuous
 
-on: [push]
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
 
 jobs:
   ubuntu-latest:
