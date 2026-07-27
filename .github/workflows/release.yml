@@ -1,0 +1,45 @@
+name: release
+
+on:
+  push:
+    tags:
+      - '\d+\.\d+\.\d+'
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            10.0.x
+      - name: 'Cache: ~/.nuget/packages'
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: ${{ runner.os }}-nuget-
+      - name: Pack
+        run: dotnet pack src/MudBlazor.Templates.sln --configuration Release --output artifacts/packages
+      - name: 'Push: nuget.org'
+        env:
+          NUGET_KEY: ${{ secrets.NUGET_KEY }}
+        run: dotnet nuget push "artifacts/packages/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key "$NUGET_KEY" --skip-duplicate
+      - name: 'Push: GitHub Packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_SOURCE: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+        run: dotnet nuget push "artifacts/packages/*.nupkg" --source "$NUGET_SOURCE" --api-key "$GITHUB_TOKEN" --skip-duplicate
+      - name: 'Publish: packages'
+        uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: artifacts/packages

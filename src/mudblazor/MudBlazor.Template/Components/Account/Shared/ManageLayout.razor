@@ -1,0 +1,18 @@
+﻿@inherits LayoutComponentBase
+@*#if (UseWebAssembly && InteractiveAtRoot)
+@layout MudBlazor.Template.Client.Layout.MainLayout
+##else
+@layout MudBlazor.Template.Components.Layout.MainLayout
+##endif*@
+
+<MudText Typo="Typo.h3" GutterBottom="true">Manage your account</MudText>
+
+<MudGrid>
+    <MudItem md="5">
+        <MudText Typo="Typo.h6" GutterBottom="true">Change your account settings</MudText>
+        <ManageNavMenu />
+    </MudItem>
+    <MudItem md="7">
+        @Body
+    </MudItem>
+</MudGrid>

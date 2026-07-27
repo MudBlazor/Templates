@@ -1,0 +1,20 @@
+@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
+<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor and the .NET 10 Template!</MudText>
+
+@*#if (MissingAuthority)
+<MudAlert Severity="Severity.Warning" Variant="Variant.Outlined" Dense="true" Class="mb-6">
+    Before authentication will function correctly, you must configure your provider details in <code>Program.cs</code>.
+</MudAlert>
+
+##endif*@
+
+<MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start">
+    You can find documentation and examples on our website here:
+    <MudLink Href="https://mudblazor.com" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
+        <b>www.mudblazor.com</b>
+    </MudLink>
+</MudAlert>

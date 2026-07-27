@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inject NavigationManager Navigation
+
+<AuthorizeView>
+    <Authorized>
+        <MudText Typo="Typo.body2" Class="d-inline mr-2">Hello, @context.User.Identity?.Name!</MudText>
+        <MudButton Variant="Variant.Text" Color="Color.Inherit" OnClick="BeginLogOut">Log out</MudButton>
+    </Authorized>
+    <NotAuthorized>
+        <MudLink Href="authentication/login" Color="Color.Inherit" Underline="Underline.Hover" Typo="Typo.body2">Log in</MudLink>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code{
+    public void BeginLogOut()
+    {
+        Navigation.NavigateToLogout("authentication/logout");
+    }
+}

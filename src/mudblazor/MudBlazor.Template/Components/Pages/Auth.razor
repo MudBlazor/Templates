@@ -1,0 +1,21 @@
+﻿@page "/auth"
+
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize]
+
+<PageTitle>Auth</PageTitle>
+
+@*#if (!InteractiveAtRoot)
+@rendermode InteractiveServer
+
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+##endif*@
+
+<MudText Typo="Typo.h3" GutterBottom="true">You are authenticated!</MudText>
+
+<AuthorizeView>
+    <MudText Class="mb-4">Hello @context.User.Identity?.Name!</MudText>
+</AuthorizeView>

@@ -1,0 +1,25 @@
+﻿@using System.Net.Http
+@using System.Net.Http.Json
+@*#if (IndividualLocalAuth)
+@using Microsoft.AspNetCore.Components.Authorization
+@using MudBlazor.StaticInput
+##endif*@
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using static Microsoft.AspNetCore.Components.Web.RenderMode
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+@using MudBlazor
+@using MudBlazor.Services
+@using MudBlazor.Template
+@*#if (UseWebAssembly) -->
+@using MudBlazor.Template.Client
+##endif*@
+@*#if (UseServer && UseWebAssembly && InteractiveAtRoot) -->
+@using MudBlazor.Template.Client.Layout
+##endif*@
+@using MudBlazor.Template.Components
+@*#if ((UseServer && !UseWebAssembly) || !InteractiveAtRoot) -->
+@using MudBlazor.Template.Components.Layout
+##endif*@

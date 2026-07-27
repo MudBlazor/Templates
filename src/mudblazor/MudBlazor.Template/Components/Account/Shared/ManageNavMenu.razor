@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MudBlazor.Template.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+
+<MudNavMenu>
+    <MudNavLink Href="Account/Manage" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Person">Profile</MudNavLink>
+    <MudNavLink Href="Account/Manage/Email" Icon="@Icons.Material.Filled.Email">Email</MudNavLink>
+    <MudNavLink Href="Account/Manage/ChangePassword" Icon="@Icons.Material.Filled.Lock">Password</MudNavLink>
+    @if (hasExternalLogins)
+    {
+        <MudNavLink Href="Account/Manage/ExternalLogins" Icon="@Icons.Material.Filled.PhoneLocked">External logins</MudNavLink>
+    }
+    <MudNavLink Href="Account/Manage/TwoFactorAuthentication" Icon="@Icons.Material.Filled.LockClock">Two-factor authentication</MudNavLink>
+    <MudNavLink Href="Account/Manage/Passkeys" Icon="@Icons.Material.Filled.Password">Passkeys</MudNavLink>
+    <MudNavLink Href="Account/Manage/PersonalData" Icon="@Icons.Material.Filled.PersonRemove">Personal data</MudNavLink>
+</MudNavMenu>
+
+@code {
+    private bool hasExternalLogins;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+    }
+}
