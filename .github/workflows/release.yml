@@ -13,22 +13,22 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: |
             10.0.x
       - name: 'Cache: ~/.nuget/packages'
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
           restore-keys: ${{ runner.os }}-nuget-
       - name: Pack
-        run: dotnet pack src/MudBlazor.Templates.sln --configuration Release --output artifacts/packages
+        run: dotnet pack src/MudBlazor.Templates.slnx --configuration Release --output artifacts/packages
       - name: 'Push: nuget.org'
         env:
           NUGET_KEY: ${{ secrets.NUGET_KEY }}
@@ -39,7 +39,7 @@ jobs:
           NUGET_SOURCE: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
         run: dotnet nuget push "artifacts/packages/*.nupkg" --source "$NUGET_SOURCE" --api-key "$GITHUB_TOKEN" --skip-duplicate
       - name: 'Publish: packages'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: packages
           path: artifacts/packages
