@@ -1,3 +1,7 @@
+# A failing dotnet exit code is not a PowerShell error, so without these the script runs to the end and reports the exit code of the last build only.
+$ErrorActionPreference = 'Stop'
+$PSNativeCommandUseErrorActionPreference = $true
+
 $tests = Join-Path $PSScriptRoot '/tests'
 
 Remove-Item -LiteralPath $tests -Force -Recurse -ErrorAction SilentlyContinue
