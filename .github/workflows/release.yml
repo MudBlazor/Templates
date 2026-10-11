@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: read
       packages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v7
         with:
@@ -29,10 +30,13 @@ jobs:
           restore-keys: ${{ runner.os }}-nuget-
       - name: Pack
         run: dotnet pack src/MudBlazor.Templates.slnx --configuration Release --output artifacts/packages
-      - name: 'Push: nuget.org'
-        env:
-          NUGET_KEY: ${{ secrets.NUGET_KEY }}
-        run: dotnet nuget push "artifacts/packages/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key "$NUGET_KEY" --skip-duplicate
+      - name: NuGet login
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: MudBlazor
+      - name: NuGet push
+        run: dotnet nuget push "artifacts/packages/*.nupkg" --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
       - name: 'Push: GitHub Packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
