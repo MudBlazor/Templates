@@ -79,8 +79,6 @@
             RedirectManager.RedirectToWithStatus("Account/Manage/Passkeys", "Error: The specified passkey could not be found.", HttpContext);
             return;
         }
-
-        Input.Name = passkey.Name ?? string.Empty;
     }
 
     private async Task Rename()
