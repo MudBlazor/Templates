@@ -23,7 +23,7 @@
     #components-reconnect-modal.components-reconnect-show,
     #components-reconnect-modal[open],
     #components-reconnect-modal.components-reconnect-failed,
-    #components-reconnect-modal.components-reconnect-repeated-attempt,
+    #components-reconnect-modal.components-reconnect-retrying,
     #components-reconnect-modal.components-reconnect-paused,
     #components-reconnect-modal.components-reconnect-resume-failed,
     #components-reconnect-modal.components-pause,
@@ -126,11 +126,11 @@ dialog[open].components-reconnect-failed #components-reconnect-button {
     display: block;
 }
 
-dialog[open].components-reconnect-repeated-attempt .components-reconnect-repeated-attempt-visible {
+dialog[open].components-reconnect-retrying .components-reconnect-repeated-attempt-visible {
     display: block;
 }
 
-dialog[open].components-reconnect-repeated-attempt .components-rejoin-loader {
+dialog[open].components-reconnect-retrying .components-rejoin-loader {
     display: inline-flex;
 }
 
